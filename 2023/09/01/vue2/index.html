@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<!-- hexo injector head_begin end -->
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Vity Abour">
+
+
+
+
+
+<title>Vue2手记 | Vity Abour&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="https://s2.loli.net/2023/08/04/vICJlzMrRcn8s9b.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Vity Abour&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Vity Abour&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Vue2手记</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Vity Abour</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 1, 2023&nbsp;&nbsp;23:33:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>该文章是大二期间在B站学习尚硅谷Vue时所记录下来的笔记，文章内容是对该视频前四十集的总结，当然，后续可能会对该文章进行补充。</p>
+<p>希望能帮助到大家\(@^0^@)&#x2F;！</p>
+</blockquote>
+<h2 id="一、初识Vue"><a href="#一、初识Vue" class="headerlink" title="一、初识Vue"></a>一、初识Vue</h2><ol>
+<li><p>想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象;</p>
+</li>
+<li><p>root容器里的代码依然符合htm1规范，只不过混入了一些特殊的Vue语法;</p>
+</li>
+<li><p>root容器里的代码被称为[Vue模板];</p>
+</li>
+<li><p>Vue实例和容器是一一对应的；</p>
+</li>
+<li><p>真实开发中只有一个Vue实例，并且会配合着组件一起使用；</p>
+</li>
+<li><p><code>&#123;&#123;xxx&#125;&#125;</code>中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性;</p>
+</li>
+<li><p>一旦data中的数据发生改变，那么页中用到该数据的地方也会自动更新:</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span>	</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="注意区分：js表达式和js代码-语句"><a href="#注意区分：js表达式和js代码-语句" class="headerlink" title="注意区分：js表达式和js代码(语句)"></a>注意区分：js表达式和js代码(语句)</h5><h6 id="1、表达式-一个表达式会产生一个值，-可以放在任何一个需要值的地方"><a href="#1、表达式-一个表达式会产生一个值，-可以放在任何一个需要值的地方" class="headerlink" title="1、表达式:一个表达式会产生一个值， 可以放在任何一个需要值的地方:"></a>1、表达式:一个表达式会产生一个值， 可以放在任何一个需要值的地方:</h6><p>（1）、 <code>a</code></p>
+<p>（2）、<code>a+b</code></p>
+<p>（3）、<code>demo(1)</code></p>
+<p>（4）、<code>x=== y ? &#39;a&#39; : &#39;b&#39;</code></p>
+<h6 id="2、js代码-语句"><a href="#2、js代码-语句" class="headerlink" title="2、js代码(语句)"></a>2、js代码(语句)</h6><p>（1）、<code>if()&#123;&#125;</code></p>
+<p>（2）、<code>for()&#123;&#125;</code></p>
+<h2 id="二、模板语法"><a href="#二、模板语法" class="headerlink" title="二、模板语法:"></a>二、模板语法:</h2><h5 id="1、插值语法"><a href="#1、插值语法" class="headerlink" title="1、插值语法:"></a>1、插值语法:</h5><p>功能：用于解析标签体内容。</p>
+<p>写法: <code>&#123;&#123;xxx&#125;&#125;</code>, xxx是js表达式，且可以直接读取到data中的所有属性。</p>
+<h5 id="2-指令语法"><a href="#2-指令语法" class="headerlink" title="2.指令语法:"></a>2.指令语法:</h5><p>功能:用于解析标签(包括:标签属性、标签体内容、绑定事件…..)。</p>
+<p>举例: <code>v-bind:href=&quot;xxx&quot;</code> 或简写为 <code>:href=&quot;x&quot;</code>, xxx同样要写js表达式，<br>    且可以直接读取到data中的所有属性。</p>
+<p>备注: Vue中有很多的指令，且形式都是: <code>v-????</code>。</p>
+<h2 id="三、数据绑定"><a href="#三、数据绑定" class="headerlink" title="三、数据绑定"></a>三、数据绑定</h2><h5 id="1-单向绑定-v-bind-数据只能从data流向页面。"><a href="#1-单向绑定-v-bind-数据只能从data流向页面。" class="headerlink" title="1.单向绑定(v-bind):数据只能从data流向页面。"></a>1.单向绑定(<code>v-bind</code>):数据只能从data流向页面。</h5><h5 id="2-双向绑定-v-model-数据不仅能从data流向页面，还可以从页面流向data"><a href="#2-双向绑定-v-model-数据不仅能从data流向页面，还可以从页面流向data" class="headerlink" title="2.双向绑定(v-model):数据不仅能从data流向页面，还可以从页面流向data."></a>2.双向绑定(<code>v-model</code>):数据不仅能从data流向页面，还可以从页面流向data.</h5><h5 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h5><p>1.双向绑定一般都应用在表单类元素上(如: <code>input</code>、 <code>select</code>等 )<br>    2.<code>v-model</code>:<code>value</code>可以简写为<code>v-model</code>,因为<code>v-mode1</code>默认收集的就是<code>value</code>值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--普通写法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-bind:value</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model:value</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--简写--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:value</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、el与data的2种写法"><a href="#四、el与data的2种写法" class="headerlink" title="四、el与data的2种写法"></a>四、el与data的2种写法</h2><h5 id="1-e1有2种写法"><a href="#1-e1有2种写法" class="headerlink" title="1.e1有2种写法"></a>1.e1有2种写法</h5><p>(1)、<code>new Vue</code>时候配置el属性。<br>    (2)、先创建Vue实例，随后再通过<code>vm.$mount(&#39;#root&#39;)</code>指定e1的值。</p>
+<h5 id="2、data有2种写法"><a href="#2、data有2种写法" class="headerlink" title="2、data有2种写法"></a>2、data有2种写法</h5><p>(1)、对象式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>:&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)、函数式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如何选择:目前哪种写法都可以，以后学习到组件时，data必须使用函数式，否则会报错。</p>
+<h5 id="3-一个重要的原则"><a href="#3-一个重要的原则" class="headerlink" title="3.一个重要的原则:"></a>3.一个重要的原则:</h5><p>由Vue管理的函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue实例了。（Window实例）</p>
+<h2 id="五、MVVM模型"><a href="#五、MVVM模型" class="headerlink" title="五、MVVM模型"></a>五、MVVM模型</h2><p>1、M:模型(Model) : data中的数据</p>
+<p>2、V:视图(View) :模板代码</p>
+<p>3、VM: 视图模型(ViewModel): Vue实例</p>
+<h5 id="观察发现"><a href="#观察发现" class="headerlink" title="观察发现:"></a>观察发现:</h5><p>1、<code>data</code>中所有的属性，最后都出现在了<code>vm</code>身上。</p>
+<p>2、<code>vm</code>身上所有的属性及Vue原型上所有属性，在Vue模板中都可以直接使用。</p>
+<h2 id="六、数据代理"><a href="#六、数据代理" class="headerlink" title="六、数据代理"></a>六、数据代理</h2><h5 id="1、Object-defineProperty-obj-prop-desc"><a href="#1、Object-defineProperty-obj-prop-desc" class="headerlink" title="1、Object.defineProperty(obj,prop,desc)"></a>1、<code>Object.defineProperty(obj,prop,desc)</code></h5><p><code>obj</code> : 第一个参数就是要在哪个对象身上添加或者修改属性<br>    <code>prop</code> : 第二个参数就是添加或修改的属性名<br>    <code>desc</code> ： 配置项，一般是一个对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(person, <span class="string">&#x27;age&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span>,    <span class="comment">//控制属性是否可以枚举，默认值是false</span></span><br><span class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,     <span class="comment">//控制属性是否可以被修改，默认值是false</span></span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span>,     <span class="comment">//控制属性是否可以被删除，默认值是false</span></span><br><span class="line">    ------------</span><br><span class="line">    <span class="comment">//当有人读取person的age值时，get函数（getter）就会被调用，且返回值就是get值</span></span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>	num</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//当有人修改person的age值时，set函数（setter）就会被调用，且会收到具体值</span></span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>)&#123;</span><br><span class="line">    	num=value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h6 id="注意：当使用了getter或setter方法，不允许使用writable和value这两个属性-如果使用，会直接报错滴"><a href="#注意：当使用了getter或setter方法，不允许使用writable和value这两个属性-如果使用，会直接报错滴" class="headerlink" title="注意：当使用了getter或setter方法，不允许使用writable和value这两个属性(如果使用，会直接报错滴)"></a><strong>注意：</strong>当使用了getter或setter方法，不允许使用writable和value这两个属性(如果使用，会直接报错滴)</h6><h5 id="2、数据代理"><a href="#2、数据代理" class="headerlink" title="2、数据代理"></a>2、数据代理</h5><p>通过一个对象代理对另一个对象中属性的操作（读&#x2F;写）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">x</span>: <span class="number">100</span> &#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123; <span class="attr">y</span>: <span class="number">200</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj2, <span class="string">&quot;x&quot;</span>, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> obj.<span class="property">x</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span><br><span class="line">        obj.<span class="property">x</span> = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、Vue中的数据代理"><a href="#3、Vue中的数据代理" class="headerlink" title="3、Vue中的数据代理"></a>3、Vue中的数据代理</h5><p><img src="https://s2.loli.net/2023/09/01/ZC8coUJRqv2YeXW.jpg" alt="01"></p>
+<h2 id="七、事件"><a href="#七、事件" class="headerlink" title="七、事件"></a>七、事件</h2><h5 id="1、事件处理"><a href="#1、事件处理" class="headerlink" title="1、事件处理"></a>1、事件处理</h5><p>1.使用<code>v-on:XXX</code>或<code>@xx</code>绑定事件，其中xxx是事件名;</p>
+<p>2.事件的回调需要配置在<code>methods</code>对象中，最终会在vm上;</p>
+<p>3.<code>methods</code>中配置的函数，不要用箭头函数！否则<code>this</code>就不是<code>vm</code>了:</p>
+<p>4，<code>methods</code>中配置的函数，都是被Vue所管理的函数，<code>this</code>的指向是<code>vm</code>或组件实例对象;</p>
+<p>5.<code>@click=&quot;demo&quot;</code>和<code>@click=&quot;demo($event)&quot;</code>效果一致， 但后者可以传参;若想既有<code>event</code>又有参数，则</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">&quot;demo($event,66)&quot;</span>&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"><span class="attr">methodes</span>:&#123;</span><br><span class="line">    <span class="title function_">demo</span>(<span class="params">e,num</span>)&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.方法不能做数据代理</p>
+<h5 id="2、Vue中的事件修饰符"><a href="#2、Vue中的事件修饰符" class="headerlink" title="2、Vue中的事件修饰符:"></a>2、Vue中的事件修饰符:</h5><p>1.<code>prevent</code>:阻止默认事件(常用)；</p>
+<p>2.<code>stop</code>:阻止事件冒泡(常用)；</p>
+<p>3.<code>once</code>:事件只触发一次(常用)；</p>
+<p>4.<code>capture</code>:使用事件的捕获模式；</p>
+<p>5.<code>self</code>:只有<code>event</code>，<code>target</code>是当前操作的元素才触发事件;</p>
+<p>6.<code>passive</code>:事件的默认行为立即执行，无需等待事件回调执行完毕;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修饰符可连写</span></span><br><span class="line">&lt;a href=<span class="string">&quot;http://www.baidu.com&quot;</span> </span><br><span class="line">@click.<span class="property">prevent</span>.<span class="property">stop</span>=<span class="string">&quot;showInfo&quot;</span>&gt;点我提示信息&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、键盘事件"><a href="#3、键盘事件" class="headerlink" title="3、键盘事件"></a>3、键盘事件</h5><p>1.Vue中常用的按键别名:<br>        回车 &#x3D;&gt; <code>enter</code><br>        删除 &#x3D;&gt; <code>delete</code> (捕获“删除”和“退格”键)<br>        退出 &#x3D;&gt; <code>esc</code><br>        空格 &#x3D;&gt; <code>space</code><br>        换行 &#x3D;&gt; <code>tab</code> (特殊，必须配合keydown去使用)<br>        上 &#x3D;&gt; <code>up</code><br>        下 &#x3D;&gt; <code>down</code><br>        左 &#x3D;&gt; <code>left</code><br>        右 &#x3D;&gt; <code>right</code></p>
+<p>2.Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要转为<code>kebab-case</code>(短横线命名)</p>
+<p>3.系统修饰键(用法特殊) : <code>ctr1</code>、<code>alt</code>、 <code>shift</code>、 <code>meta</code>(Win键)<br>        (1).配合<code>keyup</code>使用:按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。<br>        (2) .配合<code>keydown</code>使用:正常触发事件。</p>
+<p>4.也可以使用<code>keyCode</code>去指定具体的按键(不推荐)</p>
+<p>5.<code>Vue.config.keyCodes.~</code>自定义键名&#x3D;键码，可以去定制按键别名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//1</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placehold</span>=<span class="string">&quot;按下回车提示输入&quot;</span> @<span class="attr">keyup.enter</span>=<span class="string">&quot;showInfo&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//2</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placehold</span>=<span class="string">&quot;按下回车提示输入&quot;</span> </span></span><br><span class="line"><span class="tag">@<span class="attr">keyup.caps-lock</span>=<span class="string">&quot;showInfo&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//3</span><br><span class="line">//只限制系统修饰键和某个按钮才能触发</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;按下回车提示输入&quot;</span> @<span class="attr">keyup.ctrl.y</span>=<span class="string">&quot;showInfo&quot;</span>&gt;</span></span><br><span class="line">//只限制ctrl+y才能触发showInfo方法</span><br><span class="line"></span><br><span class="line">//4</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placehold</span>=<span class="string">&quot;按下回车提示输入&quot;</span> </span></span><br><span class="line"><span class="tag">@<span class="attr">keyup.13</span>=<span class="string">&quot;showInfo&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//5</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placehold</span>=<span class="string">&quot;按下回车提示输入&quot;</span> </span></span><br><span class="line"><span class="tag">@<span class="attr">keyup.huiche</span>=<span class="string">&quot;showInfo&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    Vue.config.Vue.config.keyCodes = &#123;</span><br><span class="line">        huiche: 13</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2023/09/01/m6gbETGdPMsKWVL.png" alt="02"></p>
+<center>4不推荐的原因</center>
+
+<h2 id="八、计算属性"><a href="#八、计算属性" class="headerlink" title="八、计算属性"></a>八、计算属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">  ...  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1.定义: 要用的属性不存在，要通过已有属性计算得来。</p>
+<p>2.原理:底层借助了<code>Objcet.defineproperty</code>方法提供的getter和setter。</p>
+<p>3.get函数什么时候执行?<br>        (1).初次读取时会执行一次。<br>        (2).当依赖的数据发生改变时会被再次调用。</p>
+<p>4.优势:与<code>methods</code>实现相比，内部有缓存机制(复用)，效率更高，调试方便。</p>
+<p>5.备注:<br>        1.计算属性最终会出现在:<code>vm</code>上，直接读取使用即可。<br>        2.如果计算属性要被修改，那必须写<code>set</code>函数去响应修改，且<code>set</code>中要引起计算时依赖的数据发生改变。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>: <span class="string">&#x27;#root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">name</span>: <span class="string">&#x27;Tom&#x27;</span></span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//一般</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">computed</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">fullName</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get被调用了&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">                    &#125;,</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//一般没有setter</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;set被调用了&quot;</span> + value);</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">this</span>.<span class="property">name</span> = value</span></span><br><span class="line"><span class="language-javascript">                    &#125;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript"> 	   -----------------------------</span></span><br><span class="line"><span class="language-javascript">    		<span class="comment">//简写(限于没有setter)</span></span></span><br><span class="line"><span class="language-javascript">    		<span class="attr">computed</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">fullName</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get被调用了&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="九、监视属性"><a href="#九、监视属性" class="headerlink" title="九、监视属性"></a>九、监视属性</h2><p>1.当被监视的属性变化时，回调函数自动调用，进行相关操作<br>    2.监视的属性必须存在，才能进行监视！ ！<br>    3.监视的两种写法：<br>        (1)<code>new Vue</code>时传入<code>watch</code>配置<br>        (2)通过<code>vm.$watch</code>监视<br>        何时使用？一开始明确监视谁，用<code>watch:&#123;&#125;</code>，后续根据用户行为监测用<code>vm.$watch</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//new Vue</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="attr">watch</span>: &#123;</span><br><span class="line">       <span class="comment">//一般</span></span><br><span class="line">       属性/计算属性:&#123;</span><br><span class="line">            <span class="attr">immediate</span>:<span class="literal">true</span>/<span class="literal">false</span>,<span class="comment">//初始化时让handler调用一下</span></span><br><span class="line">        	<span class="attr">deep</span>:<span class="literal">true</span>/<span class="literal">false</span>,<span class="comment">//深度监视，监听多级结构属性的变化，层级结构</span></span><br><span class="line">       		<span class="title function_">hander</span>(<span class="params">newValue,oldValue</span>)&#123;</span><br><span class="line">            	...</span><br><span class="line">        	&#125; <span class="comment">//什么时候调用？当属性发生改变时</span></span><br><span class="line">       &#125;</span><br><span class="line">       ---------------</span><br><span class="line">  	   <span class="comment">//简写(在不使用immediate、deep属性的情况下使用)</span></span><br><span class="line">       	属性/计算属性(newValue,oldValue)&#123;</span><br><span class="line">    		...</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line">---------------------</span><br><span class="line"><span class="comment">//vm.$watch</span></span><br><span class="line"><span class="comment">//一般</span></span><br><span class="line">vm.$watch(<span class="string">&#x27;属性/计算属性&#x27;</span>,&#123;</span><br><span class="line">    <span class="attr">immediate</span>:<span class="literal">true</span>/<span class="literal">false</span>,<span class="comment">//初始化时让handler调用一下</span></span><br><span class="line">    <span class="attr">deep</span>:<span class="literal">true</span>/<span class="literal">false</span>,</span><br><span class="line">    <span class="title function_">hander</span>(<span class="params">newValue,oldValue</span>)&#123;</span><br><span class="line">  		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">---------</span><br><span class="line"><span class="comment">//简写</span></span><br><span class="line">vm.$watch(<span class="string">&#x27;属性/计算属性&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    ...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//deep</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="attr">data</span>:&#123;</span><br><span class="line">    	<span class="keyword">return</span>&#123;</span><br><span class="line">    		<span class="attr">school</span>:&#123;</span><br><span class="line">    			<span class="attr">stu</span>:<span class="number">1</span>,</span><br><span class="line">    			<span class="attr">tea</span>:<span class="number">1</span>,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">watch</span>:&#123;</span><br><span class="line">        <span class="string">&#x27;school.stu&#x27;</span>(v1, v2) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;stu被改变了&quot;</span>, v1, v2);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&#x27;school.tea&#x27;</span>(v1, v2) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;tea被改变了&quot;</span>, v1, v2);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">school</span>: &#123;</span><br><span class="line">            <span class="attr">deep</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="title function_">handler</span>(<span class="params">v1, v2</span>) &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;school属性被监听了&quot;</span>, v1, v2);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="comment">//deep属性可以读取shool内部所有属性的变化</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>computed</code>和<code>watch</code>之间的区别:<br>        1、<code>computed</code>能完成的功能，<code>watch</code>都可以完成，但<code>computed</code>完成的更高效。<br>        2、<code>watch</code>能完成的功能，<code>computed</code>不一定能完成，例如: <code>watch</code>可以进行异步操作。</p>
+<p>两个重要的小原则:<br>        1.所被Vue管理的函数，最好写成普通函数，这样<code>this</code>的指向才是<code>vm</code>或组件实例对象。<br>        2.所有不被Vue所管理的函数(定时器的回调函数、<code>ajax</code>的回调函数等、<code>Promise</code>的回调函数)，最好写成箭头函数，这样<code>this</code>的指向才是<code>vm</code>或组件实例对象。</p>
+<h2 id="十、绑定样式"><a href="#十、绑定样式" class="headerlink" title="十、绑定样式"></a>十、绑定样式</h2><h5 id="1、class样式"><a href="#1、class样式" class="headerlink" title="1、class样式"></a>1、class样式</h5><p>写法 <code>:class=&quot;xxx&quot;</code>其中xxx可以是字符串、对象、数组。<br>​	字符串写法适用于：类名不确定，要动态获取。<br>​	对象写法适用于：要绑定多个样式,个数不确定，名字也不确定。<br>​	数组写法适用于：要绑定多个样式，个数确定，名字也确定，但不确定用不用。</p>
+<h5 id="2、style样式"><a href="#2、style样式" class="headerlink" title="2、style样式"></a>2、style样式</h5><p>​	<code>:style=&quot;&#123;fontsize: xxx&#125;&quot;</code>其中xxx是动态值。<br>​		<code>:style=&quot;[a,b]&quot;</code>其中a、b是样式对象。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- class --&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 1、字符串写法（适用于：样式的类名不确定，需要动态指定）： --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;classStr&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 2、	数组写法（适用于：要绑定的样式个数不确定，名字也不确定）： --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;classArr&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 3、对象写法（适用于：要绑定的样式个数确定、名字也确定，但要动态决定用不用） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;classObj&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- style --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 1、对象写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">&quot;styleObj&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 2、数组写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">&quot;styleArr&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> vm=<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>:<span class="string">&#x27;#root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">classStr</span>:<span class="string">&#x27;normal&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">classArr</span>:[<span class="string">&#x27;one&#x27;</span>,<span class="string">&#x27;two&#x27;</span>,<span class="string">&#x27;three&#x27;</span>]</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">classObj</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                	<span class="attr">flag1</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">                	<span class="attr">flag2</span>:<span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">            	&#125;,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">styleObj</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">fontSize</span>:<span class="string">&#x27;40px&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                &#125;,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">styleArr</span>:[</span></span><br><span class="line"><span class="language-javascript">                    &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">fontSize</span>:<span class="string">&#x27;40px&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">color</span>:<span class="string">&#x27;blue&#x27;</span></span></span><br><span class="line"><span class="language-javascript">                    &#125;,</span></span><br><span class="line"><span class="language-javascript">                    &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">backgroundColor</span>:<span class="string">&#x27;orange&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                    &#125;</span></span><br><span class="line"><span class="language-javascript">                ],</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="十一、条件渲染"><a href="#十一、条件渲染" class="headerlink" title="十一、条件渲染"></a>十一、条件渲染</h2><h5 id="1-v-if"><a href="#1-v-if" class="headerlink" title="1.v-if"></a>1.v-if</h5><p>写法：<br>    (1).<code>v-if=&quot;表达式&quot;</code><br>    (2).<code>v-else-if=&quot;表达式&quot;</code><br>    (3).<code>v-else=&quot;表达式&quot;</code><br>适用于：切换频率较低的场景。<br>特点：不展示的DOM元素直接被移除。<br>注意：<code>v-if</code>可以和:<code>v-else-if</code>、<code>v-else</code>一起使用，但要求结构不能被“打断”。</p>
+<h5 id="2-v-show"><a href="#2-v-show" class="headerlink" title="2.v-show"></a>2.v-show</h5><p>写法: <code>v-show=&quot;表达式&quot;</code><br>适用于:切换频率较高的场景。<br>特点：不展示的DOM元素未被移除，仅仅是使样式隐藏掉</p>
+<h5 id="3-备注"><a href="#3-备注" class="headerlink" title="3.备注:"></a>3.备注:</h5><p>使用<code>v-if</code>的时，元素可能无法获取到，而使用v-show一定可以获取到。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 要想不破坏结构，有能使多个标签实现条件渲染 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- template标签作为模板，不会影响结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 破坏了结构，增加了外部盒子 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;...&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="十二、列表渲染"><a href="#十二、列表渲染" class="headerlink" title="十二、列表渲染"></a>十二、列表渲染</h2><h5 id="1、v-for指令"><a href="#1、v-for指令" class="headerlink" title="1、v-for指令"></a>1、v-for指令</h5><p>1、用于展示列表数据<br>​	2、语法: <code>v-for=&quot;(item,index) in xxx&quot; :key=&quot;yyy&quot;</code><br>​	3、可遍历:数组、对象、字符串（用的很少)、指定次数（用的很少)</p>
+<h5 id="2、key的作用与原理"><a href="#2、key的作用与原理" class="headerlink" title="2、key的作用与原理"></a>2、key的作用与原理</h5><p><img src="https://s2.loli.net/2023/09/01/MHzkIjnGuTOSJer.png" alt="image-20220922152603958"></p>
+<p><img src="https://s2.loli.net/2023/09/01/vgNPpJL1QyaY3Ik.png" alt="image-20220922152722036"></p>
+<h5 id="面试题-react、-vue中的key有什么作用-（key的内部原理"><a href="#面试题-react、-vue中的key有什么作用-（key的内部原理" class="headerlink" title="面试题:react、 vue中的key有什么作用? （key的内部原理)"></a>面试题:react、 vue中的key有什么作用? （key的内部原理)</h5><h6 id="1、虚拟DOM中key的作用"><a href="#1、虚拟DOM中key的作用" class="headerlink" title="1、虚拟DOM中key的作用:"></a>1、虚拟DOM中key的作用:</h6><p>​	key是虚拟DOM对象的标识，当数据发生变化时，Vue会根据【新数据】生成【新的虚拟DOM】,随后Vue进行【新虚拟DOM】与【旧虚拟DOM】的差异比较，比较规则如下:</p>
+<h6 id="2、对比规则"><a href="#2、对比规则" class="headerlink" title="2、对比规则:"></a>2、对比规则:</h6><p>(1).旧虚拟DOM中找到了与新虚拟DOM相同的key:<br>    1.若虚拟DOM中内容没变,直接使用之前的真实DOM !<br>    2.若虚拟DOM中内容变了，则生成新的真实DOM，随后替换掉页面中之前的真实DON.<br>(2).旧虚拟DOM中未找到与新虚拟DOM相同的key<br>    创建新的真实DOM，随后渲染到到页面。</p>
+<h5 id="3、用index作为key可能会引发的问题"><a href="#3、用index作为key可能会引发的问题" class="headerlink" title="3、用index作为key可能会引发的问题:"></a>3、用index作为key可能会引发的问题:</h5><p>​	1.若对数据进行:逆序添加、逆序删除等破坏顺序操作:<br>​		会产生没有必要的真实DOM更新 —&gt; 界面效果没问题，但效率低。<br>​	2.如果结构中还包含输入类的DOM:<br>​		会产生错误DOM更新 —&gt; 界面有问题。</p>
+<h5 id="4、开发中如何选择key"><a href="#4、开发中如何选择key" class="headerlink" title="4、开发中如何选择key? :"></a>4、开发中如何选择key? :</h5><p>​	1.最好使用每条数据的唯一标识作为key，比如<code>id</code>、手机号、身份证号、学号等唯一值。<br>​	2.如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示，使用<code>index</code>作为key是没有问题的。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Vity Abour</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://vityabour.github.io/2023/09/01/vue2/">http://vityabour.github.io/2023/09/01/vue2/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Vue/"># Vue</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/08/06/%E5%90%AF%E8%88%AA/">启航</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Vity Abour | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
