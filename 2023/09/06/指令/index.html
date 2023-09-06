@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<!-- hexo injector head_begin end -->
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Vity Abour">
+
+
+
+
+
+<title>指令 | Vity Abour&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="https://s2.loli.net/2023/08/04/vICJlzMrRcn8s9b.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Vity Abour&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Vity Abour&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">指令</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Vity Abour</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 6, 2023&nbsp;&nbsp;0:03:15</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="一、内置指令"><a href="#一、内置指令" class="headerlink" title="一、内置指令"></a>一、内置指令</h3><p><code>v-bind</code>: 单向绑定解析表达式, 可简写为 :xxx<br>    <code>v-model</code>: 双向数据绑定<br>    <code>v-for</code>: 遍历数组&#x2F;对象&#x2F;字符串<br>    <code>v-on</code>: 绑定事件监听, 可简写为@<br>    <code>v-if</code>: 条件渲染（动态控制节点是否存存在）<br>    <code>v-else</code>: 条件渲染（动态控制节点是否存存在）<br>    <code>v-show</code>: 条件渲染 (动态控制节点是否展示)<br>    <code>v-text</code>指令：</p>
+<ol>
+<li>作用：向其所在的节点中渲染文本内容。</li>
+<li>与插值语法的区别：<code>v-text</code>会替换掉节点中的内容，<code>&#123;&#123;xx&#125;&#125;</code>则不会。</li>
+</ol>
+<p><code>v-html</code>指令：</p>
+<ol>
+<li>作用：向指定节点中渲染包含html结构的内容。</li>
+<li>与插值语法的区别：<ol>
+<li><code>v-html</code>会替换掉节点中所有的内容，<code>&#123;&#123;xx&#125;&#125;</code>则不会。</li>
+<li><code>v-html</code>可以识别html结构。</li>
+</ol>
+</li>
+<li>严重注意：<code>v-html</code>有安全性问题！！！！<ol>
+<li>在网站上动态渲染任意HTML是非常危险的，容易导致XSS攻击。</li>
+<li>一定要在可信的内容上使用<code>v-html</code>，永不要用在用户提交的内容上！</li>
+</ol>
+</li>
+</ol>
+<p><code>v-cloak</code>指令（没有值）：<br>                        1.本质是一个特殊属性，Vue实例创建完毕并接管容器后，会删掉<code>v-cloak</code>属性。<br>                        2.使用css配合<code>v-cloak</code>可以解决网速慢时页面展示出的问题。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">style:</span><br><span class="line">[v-cloak]&#123;</span><br><span class="line">	<span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code> v-once</code>指令：</p>
+<ol>
+<li><code>v-once</code>所在节点在初次动态渲染后，就视为静态内容了。</li>
+<li>以后数据的改变不会引起<code>v-once</code>所在结构的更新，可以用于优化性能。</li>
+</ol>
+<p><code>v-pre</code>指令：</p>
+<ol>
+<li>跳过其所在节点的编译过程。</li>
+<li>可利用它跳过：没有使用指令语法、没有使用插值语法的节点，会加快编译。</li>
+</ol>
+<h3 id="二、自定义指令"><a href="#二、自定义指令" class="headerlink" title="二、自定义指令"></a>二、自定义指令</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-big</span>=<span class="string">&quot;n&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="（1）简写模式"><a href="#（1）简写模式" class="headerlink" title="（1）简写模式"></a>（1）简写模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>实例中：</span><br><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">    <span class="title function_">big</span>(<span class="params">element,binding</span>) &#123; </span><br><span class="line">        element.<span class="property">innerText</span>=binding.<span class="property">value</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，在<code>directives</code>中<code>v-big</code>要写成<code>big</code>；big函数含有两个参数，分别是<code>element</code>、<code>binding</code>：</p>
+<ol>
+<li>element：返回当前指令所在的真实dom；</li>
+<li>binding：返回各个信息的值</li>
+</ol>
+<blockquote>
+<p>big函数何时会被调用？</p>
+<ol>
+<li>指令与元素成功绑定时（一上来）。</li>
+<li>指令所在的模板被重新解析时。</li>
+</ol>
+</blockquote>
+<h4 id="（2）完整模式"><a href="#（2）完整模式" class="headerlink" title="（2）完整模式"></a>（2）完整模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>实例中：</span><br><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">    <span class="attr">big</span>:&#123;</span><br><span class="line">        <span class="title function_">bind</span>(<span class="params">element, binding</span>) &#123; &#125;,<span class="comment">//指令与元素成功绑定时（一上来）</span></span><br><span class="line">        <span class="title function_">inserted</span>(<span class="params">element, binding</span>) &#123; &#125;,<span class="comment">//指令所在元素被插入页面时</span></span><br><span class="line">        <span class="title function_">update</span>(<span class="params">element, binding</span>) &#123; &#125;<span class="comment">//指令所在模板被重新解析时</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：完整模式中，<code>bind</code>、<code>inserted</code>、<code>update</code>函数内部的<code>this</code>指向<code>window</code>对象。</p>
+<blockquote>
+<h3 id="自定义指令总结："><a href="#自定义指令总结：" class="headerlink" title="自定义指令总结："></a>自定义指令总结：</h3><h4 id="一、定义语法："><a href="#一、定义语法：" class="headerlink" title="一、定义语法："></a>一、定义语法：</h4><h5 id="1-局部指令："><a href="#1-局部指令：" class="headerlink" title="(1).局部指令："></a>(1).局部指令：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">directives</span>:&#123;指令名:配置对象&#125;   或   		</span><br><span class="line">	directives&#123;指令名:回调函数&#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-全局指令："><a href="#2-全局指令：" class="headerlink" title="(2).全局指令："></a>(2).全局指令：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="title function_">directive</span>(指令名,配置对象) 或   <span class="title class_">Vue</span>.<span class="title function_">directive</span>(指令名,回调函数)</span><br></pre></td></tr></table></figure>
+
+<p>二、配置对象中常用的3个回调：</p>
+<p>​	(1).bind：指令与元素成功绑定时调用。<br>​		(2).inserted：指令所在元素被插入页面时调用。<br>​		(3).update：指令所在模板结构被重新解析时调用。</p>
+<p>三、备注：</p>
+<ol>
+<li><p>指令定义时不加<code>v-</code>，但使用时要加<code>v-</code>；</p>
+</li>
+<li><p>指令名如果是多个单词，要使用kebab-case命名方式，不要用camelCase命名。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html:</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-big-number</span>=<span class="string">&quot;n&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">script</span>:</span><br><span class="line"><span class="attr">directives</span>:&#123;</span><br><span class="line">	<span class="string">&quot;big-number&quot;</span>(element,binding)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li></li>
+</ol>
+</blockquote>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Vity Abour</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://vityabour.github.io/2023/09/06/%E6%8C%87%E4%BB%A4/">http://vityabour.github.io/2023/09/06/%E6%8C%87%E4%BB%A4/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Vue/"># Vue</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/09/04/%E8%A1%A8%E5%8D%95%E6%94%B6%E9%9B%86/">表单收集</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Vity Abour | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

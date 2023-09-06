@@ -15,7 +15,7 @@
 
 
 
-<title>computed计算属性 | Vity Abour&#39;s Blog</title>
+<title>过滤器 | Vity Abour&#39;s Blog</title>
 
 
 
@@ -198,7 +198,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">computed计算属性</h1>
+            <h1 class="post-title">过滤器</h1>
             
                 <div class="post-meta">
                     
@@ -207,7 +207,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 2, 2023&nbsp;&nbsp;9:51:00</a>
+                        Date: <a href="#">September 3, 2023&nbsp;&nbsp;8:20:00</a>
                         </span>
                     
                     
@@ -223,38 +223,26 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>Vue2中计算属性：<a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性和侦听器 — Vue.js (vuejs.org)</a></p>
-</blockquote>
-<p>对于任何复杂逻辑，你都应当使用<strong>计算属性</strong>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="attr">a</span>:&#123;</span><br><span class="line">        <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> ...</span><br><span class="line">       &#125;,</span><br><span class="line">        <span class="title function_">set</span>(<span class="params">value</span>) &#123; </span><br><span class="line">           <span class="keyword">return</span> ...</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">简写：(省去set)</span><br><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="title function_">a</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+            <p>Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：<strong>双花括号插值和 <code>v-bind</code> 表达式</strong> (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：</p>
+<h3 id="一、局部过滤器"><a href="#一、局部过滤器" class="headerlink" title="一、局部过滤器"></a>一、局部过滤器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在双花括号中 --&gt;</span></span><br><span class="line">&#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 在 `v-bind` 中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;rawId | formatId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>若想修改a，必须设置set。</p>
-<blockquote>
-<p>注意：在<code>get</code>和<code>set</code>中若想使用<code>data</code>中的属性，应使用<code>this</code>调用，<code>this</code>所指vm</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">html:</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    今天天气很&#123;&#123;info&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;changeWeather&quot;</span>&gt;</span>切换天气<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>局部过滤器是指在vue实例中创建过滤器<code>filters:&#123;&#125;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">silent</span> = <span class="literal">false</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">time</span>: <span class="string">&#x27;12932343253538&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">filters</span>: &#123;</span><br><span class="line">        <span class="title function_">timeFormater</span>(<span class="params">value, str = <span class="string">&#x27;YYYY-MM-DD HH:mm:ss&#x27;</span></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="title function_">dayjs</span>(value).<span class="title function_">format</span>(str)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">script</span>:</span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">isHot</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>: &#123;</span><br><span class="line">        <span class="title function_">changeWeather</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">isHot</span> = !<span class="variable language_">this</span>.<span class="property">isHot</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">computed</span>: &#123;</span><br><span class="line">        <span class="title function_">info</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">isHot</span> ? <span class="string">&#x27;炎热&#x27;</span> : <span class="string">&#x27;凉爽&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
+<h3 id="二、全局过滤器"><a href="#二、全局过滤器" class="headerlink" title="二、全局过滤器"></a>二、全局过滤器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="title function_">filter</span>(value, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>计算属性 ：</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>过滤器：</p>
+<p>定义：对要显示的数据进行特定格式化后再显示（适用于一些简单逻辑的处理）。</p>
+<p>语法：</p>
 <ol>
-<li>定义：要用的属性不存在，要通过已有属性计算得来。</li>
-<li>原理：底层借助了<code>Objcet.defineproperty</code>方法提供的<code>getter</code>和<code>setter</code>。</li>
-<li>get函数什么时候执行？<ol>
-<li>初次读取时会执行一次。</li>
-<li>当依賴的数据发生改变时会被再次调用。</li>
+<li>注册过滤器：<code>Vue.filter(name,callback)</code> 或 <code>new Vue&#123;filters:&#123;&#125;&#125;</code></li>
+<li>使用过滤器：<code>&#123;&#123; xxx | 过滤器名&#125;&#125;</code>  或  <code>v-bind:属性 = &quot;xxx | 过滤器名&quot;</code></li>
 </ol>
-</li>
-<li>优势：与<code>methods</code>实现相比，内部有缓存机制（复用），效率更高，调试方便。</li>
-<li>备注：<ol>
-<li>计算属性最终会出现在vm上，直接读取使用即可。</li>
-<li>如果计算属性要被修改，那必须写 set 函数去响应修改，且set中要引起计算时依賴的数据发生改变。</li>
-</ol>
-</li>
+<p>备注：</p>
+<ol>
+<li>过滤器也可以接收额外参数、多个过滤器也可以串联</li>
+<li>并没有改变原本的数据, 是产生新的对应的数据</li>
 </ol>
 </blockquote>
 
@@ -271,7 +259,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://vityabour.github.io/2023/09/02/computed/">http://vityabour.github.io/2023/09/02/computed/</a></span>
+                        <span><a href="http://vityabour.github.io/2023/09/03/%E8%BF%87%E6%BB%A4%E5%99%A8/">http://vityabour.github.io/2023/09/03/%E8%BF%87%E6%BB%A4%E5%99%A8/</a></span>
                     </p>
                 
                 
@@ -308,10 +296,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/09/03/%E8%BF%87%E6%BB%A4%E5%99%A8/">过滤器</a>
+                <a class="prev" rel="prev" href="/2023/09/03/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/">列表渲染</a>
             
             
-            <a class="next" rel="next" href="/2023/09/02/%E8%80%B3%E6%9C%BA/">来自耳朵的肯定:耳机一戴,谁都不爱!</a>
+            <a class="next" rel="next" href="/2023/09/02/computed/">computed计算属性</a>
             
         </section>
 
