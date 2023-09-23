@@ -1,229 +1,283 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
 
 <head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="/css/bilicard.css">
 <!-- hexo injector head_begin end -->
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/android-chrome-192x192.png">
+  <link rel="icon" href="/img/android-chrome-192x192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Vity Abour">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="脚手架文件结构├── node_modules  ├── public │   ├── favicon.ico: 页签图标 │   └── index.html: 主页面 ├── src │   ├── assets: 存放静态资源 │   │   └── logo.png │   │── component: 存放组件 │   │   └── HelloWorld.vue │   │── App">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记">
+<meta property="og:url" content="http://vityabour.github.io/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/index.html">
+<meta property="og:site_name" content="Vity Abour&#39;s Blog">
+<meta property="og:description" content="脚手架文件结构├── node_modules  ├── public │   ├── favicon.ico: 页签图标 │   └── index.html: 主页面 ├── src │   ├── assets: 存放静态资源 │   │   └── logo.png │   │── component: 存放组件 │   │   └── HelloWorld.vue │   │── App">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105">
+<meta property="article:published_time" content="2023-09-10T02:13:36.196Z">
+<meta property="article:modified_time" content="2023-09-11T02:31:14.579Z">
+<meta property="article:author" content="Vity Abour">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105">
+  
+  
+  
+  <title>笔记 - Vity Abour&#39;s Blog</title>
 
-    <meta name="author" content="Vity Abour">
-
-
-
-
-
-<title>笔记 | Vity Abour&#39;s Blog</title>
-
-
-
-    <link rel="icon" href="https://s2.loli.net/2023/08/04/vICJlzMrRcn8s9b.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
-    
-    
-        
-    
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"vityabour.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-    <script>
-        // this function is used to check current theme before page loaded.
-        (() => {
-            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
-            const isDark = currentTheme === 'dark';
-            const pagebody = document.getElementsByTagName('body')[0]
-            if (isDark) {
-                pagebody.classList.add('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
-            } else {
-                pagebody.classList.remove('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Light"
-            }
-        })();
-    </script>
+  
 
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Vity Abour&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/category">Categories</a>
-                
-                    <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
+  <header>
+    
 
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Vity Abour&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/category">Categories</a>
-                
-                    <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-            </div>
-        </div>
-    </nav>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Vity Abour&#39;s Blog</strong>
+    </a>
 
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-            <div class="main">
-                <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-10 10:13" pubdate>
+          2023年9月10日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          17k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          142 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
     </div>
+  </div>
 </div>
 
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
+</div>
 
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
+  </header>
 
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
+  <main>
     
+      
 
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">笔记</h1>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">笔记</h1>
             
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Vity Abour</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">September 10, 2023&nbsp;&nbsp;10:13:36</a>
-                        </span>
-                    
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-                            
-                        </span>
-                    
-                </div>
             
-        </header>
-
-        <div class="post-content">
-            <h2 id="脚手架文件结构"><a href="#脚手架文件结构" class="headerlink" title="脚手架文件结构"></a>脚手架文件结构</h2><pre><code>├── node_modules 
+              <div class="markdown-body">
+                
+                <h2 id="脚手架文件结构"><a href="#脚手架文件结构" class="headerlink" title="脚手架文件结构"></a>脚手架文件结构</h2><pre><code class="hljs">├── node_modules 
 ├── public
 │   ├── favicon.ico: 页签图标
 │   └── index.html: 主页面
@@ -273,7 +327,7 @@
 <li><p>第二种方式（限制类型）：<code>props:&#123;name:String&#125;</code></p>
 </li>
 <li><p>第三种方式（限制类型、限制必要性、指定默认值）：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">	<span class="attr">name</span>:&#123;</span><br><span class="line">	<span class="attr">type</span>:<span class="title class_">String</span>, <span class="comment">//类型</span></span><br><span class="line">	<span class="attr">required</span>:<span class="literal">true</span>, <span class="comment">//必要性</span></span><br><span class="line">	<span class="attr">default</span>:<span class="string">&#x27;老王&#x27;</span> <span class="comment">//默认值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">props</span>:&#123;<br>	<span class="hljs-attr">name</span>:&#123;<br>	<span class="hljs-attr">type</span>:<span class="hljs-title class_">String</span>, <span class="hljs-comment">//类型</span><br>	<span class="hljs-attr">required</span>:<span class="hljs-literal">true</span>, <span class="hljs-comment">//必要性</span><br>	<span class="hljs-attr">default</span>:<span class="hljs-string">&#x27;老王&#x27;</span> <span class="hljs-comment">//默认值</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <blockquote>
 <p>备注：props是只读的，Vue底层会监测你对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制props的内容到data中一份，然后去修改data中的数据。</p>
@@ -285,10 +339,10 @@
 </li>
 <li><p>使用方式：</p>
 <p> 第一步定义混合：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    data()&#123;....&#125;,</span><br><span class="line">    methods:&#123;....&#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nim">&#123;<br>    data()<span class="hljs-meta">&#123;....&#125;</span>,<br>    methods:<span class="hljs-meta">&#123;....&#125;</span><br>    ....<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p> 第二步使用混入：</p>
-<pre><code> 全局混入：```Vue.mixin(xxx)```
+<pre><code class="hljs"> 全局混入：```Vue.mixin(xxx)```
  局部混入：```mixins:[&#39;xxx&#39;]	```
 </code></pre>
 </li>
@@ -299,7 +353,7 @@
 <li><p>本质：包含install方法的一个对象，install的第一个参数是Vue，第二个以后的参数是插件使用者传递的数据。</p>
 </li>
 <li><p>定义插件：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">对象.<span class="property">install</span> = <span class="keyword">function</span> (<span class="params">Vue, options</span>) &#123;</span><br><span class="line">    <span class="comment">// 1. 添加全局过滤器</span></span><br><span class="line">    <span class="title class_">Vue</span>.<span class="title function_">filter</span>(....)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 添加全局指令</span></span><br><span class="line">    <span class="title class_">Vue</span>.<span class="title function_">directive</span>(....)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 配置全局混入(合)</span></span><br><span class="line">    <span class="title class_">Vue</span>.<span class="title function_">mixin</span>(....)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 添加实例方法</span></span><br><span class="line">    <span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$myMethod</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;...&#125;</span><br><span class="line">    <span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$myProperty</span> = xxxx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js">对象.<span class="hljs-property">install</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">Vue, options</span>) &#123;<br>    <span class="hljs-comment">// 1. 添加全局过滤器</span><br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">filter</span>(....)<br><br>    <span class="hljs-comment">// 2. 添加全局指令</span><br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">directive</span>(....)<br><br>    <span class="hljs-comment">// 3. 配置全局混入(合)</span><br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">mixin</span>(....)<br><br>    <span class="hljs-comment">// 4. 添加实例方法</span><br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$myMethod</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;...&#125;<br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$myProperty</span> = xxxx<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>使用插件：<code>Vue.use()</code></p>
 </li>
@@ -310,7 +364,7 @@
 </ol>
 <h2 id="总结TodoList案例"><a href="#总结TodoList案例" class="headerlink" title="总结TodoList案例"></a>总结TodoList案例</h2><ol>
 <li><p>组件化编码流程：</p>
-<pre><code> (1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
+<pre><code class="hljs"> (1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
 
  (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
@@ -322,7 +376,7 @@
 </code></pre>
 </li>
 <li><p>props适用于：</p>
-<pre><code> (1).父组件 ==&gt; 子组件 通信
+<pre><code class="hljs"> (1).父组件 ==&gt; 子组件 通信
 
  (2).子组件 ==&gt; 父组件 通信（要求父先给子一个函数）
 </code></pre>
@@ -342,15 +396,15 @@
 <li><p><code>xxxxxStorage.setItem(&#39;key&#39;, &#39;value&#39;);</code><br>             该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。</p>
 </li>
 <li><p><code>xxxxxStorage.getItem(&#39;person&#39;);</code></p>
-<pre><code>     该方法接受一个键名作为参数，返回键名对应的值。
+<pre><code class="hljs">     该方法接受一个键名作为参数，返回键名对应的值。
 </code></pre>
 </li>
 <li><p><code>xxxxxStorage.removeItem(&#39;key&#39;);</code></p>
-<pre><code>     该方法接受一个键名作为参数，并把该键名从存储中删除。
+<pre><code class="hljs">     该方法接受一个键名作为参数，并把该键名从存储中删除。
 </code></pre>
 </li>
 <li><p><code> xxxxxStorage.clear()</code></p>
-<pre><code>     该方法会清空存储中的所有数据。
+<pre><code class="hljs">     该方法会清空存储中的所有数据。
 </code></pre>
 </li>
 </ol>
@@ -374,7 +428,7 @@
 <li><p>第一种方式，在父组件中：<code>&lt;Demo @atguigu=&quot;test&quot;/&gt;</code>  或 <code>&lt;Demo v-on:atguigu=&quot;test&quot;/&gt;</code></p>
 </li>
 <li><p>第二种方式，在父组件中：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Demo</span> ref=<span class="string">&quot;demo&quot;</span>/&gt;</span><br><span class="line">......</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">xxx</span>.$on(<span class="string">&#x27;atguigu&#x27;</span>,<span class="variable language_">this</span>.<span class="property">test</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;<span class="hljs-title class_">Demo</span> ref=<span class="hljs-string">&quot;demo&quot;</span>/&gt;<br>......<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>)&#123;<br>   <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">xxx</span>.$on(<span class="hljs-string">&#x27;atguigu&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">test</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>若想让自定义事件只能触发一次，可以使用<code>once</code>修饰符，或<code>$once</code>方法。</p>
 </li>
@@ -393,12 +447,12 @@
 <li><p>一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。</p>
 </li>
 <li><p>安装全局事件总线：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	......</span><br><span class="line">	<span class="title function_">beforeCreate</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$bus</span> = <span class="variable language_">this</span> <span class="comment">//安装全局事件总线，$bus就是当前应用的vm</span></span><br><span class="line">	&#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;) </span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>	......<br>	<span class="hljs-title function_">beforeCreate</span>(<span class="hljs-params"></span>) &#123;<br>		<span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">$bus</span> = <span class="hljs-variable language_">this</span> <span class="hljs-comment">//安装全局事件总线，$bus就是当前应用的vm</span><br>	&#125;,<br>    ......<br>&#125;) <br></code></pre></td></tr></table></figure>
 </li>
 <li><p>使用事件总线：</p>
 <ol>
 <li><p>接收数据：A组件想接收数据，则在A组件中给$bus绑定自定义事件，事件的<span style="color:red">回调留在A组件自身。</span></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">methods</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">demo</span>(<span class="params">data</span>)&#123;......&#125;</span><br><span class="line">&#125;</span><br><span class="line">......</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">$bus</span>.$on(<span class="string">&#x27;xxxx&#x27;</span>,<span class="variable language_">this</span>.<span class="property">demo</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">methods</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-title function_">demo</span>(<span class="hljs-params">data</span>)&#123;......&#125;<br>&#125;<br>......<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">$bus</span>.$on(<span class="hljs-string">&#x27;xxxx&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">demo</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>提供数据：<code>this.$bus.$emit(&#39;xxxx&#39;,数据)</code></p>
 </li>
@@ -417,7 +471,7 @@
 <li><p>引入: <code>import pubsub from &#39;pubsub-js&#39;</code></p>
 </li>
 <li><p>接收数据：A组件想接收数据，则在A组件中订阅消息，订阅的<span style="color:red">回调留在A组件自身。</span></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">methods</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">demo</span>(<span class="params">data</span>)&#123;......&#125;</span><br><span class="line">&#125;</span><br><span class="line">......</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">pid</span> = pubsub.<span class="title function_">subscribe</span>(<span class="string">&#x27;xxx&#x27;</span>,<span class="variable language_">this</span>.<span class="property">demo</span>) <span class="comment">//订阅消息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">methods</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-title function_">demo</span>(<span class="hljs-params">data</span>)&#123;......&#125;<br>&#125;<br>......<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">pid</span> = pubsub.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&#x27;xxx&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">demo</span>) <span class="hljs-comment">//订阅消息</span><br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>提供数据：<code>pubsub.publish(&#39;xxx&#39;,数据)</code></p>
 </li>
@@ -434,7 +488,7 @@
 <h2 id="Vue封装的过度与动画"><a href="#Vue封装的过度与动画" class="headerlink" title="Vue封装的过度与动画"></a>Vue封装的过度与动画</h2><ol>
 <li><p>作用：在插入、更新或移除 DOM元素时，在合适的时候给元素添加样式类名。</p>
 </li>
-<li><p>图示：<img src="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105" style="width:60%" /></p>
+<li><p>图示：<img src="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105" srcset="/img/loading.gif" lazyload style="width:60%" /></p>
 </li>
 <li><p>写法：</p>
 <ol>
@@ -455,16 +509,16 @@
 </ul>
 </li>
 <li><p>使用<code>&lt;transition&gt;</code>包裹要过度的元素，并配置name属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition name=&quot;hello&quot;&gt;</span><br><span class="line">	&lt;h1 v-show=&quot;isShow&quot;&gt;你好啊！&lt;/h1&gt;</span><br><span class="line">&lt;/transition&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;transition name=&quot;hello&quot;&gt;<br>	&lt;h1 v-show=&quot;isShow&quot;&gt;你好啊！&lt;/h1&gt;<br>&lt;/transition&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>备注：若有多个元素需要过度，则需要使用：<code>&lt;transition-group&gt;</code>，且每个元素都要指定<code>key</code>值。</p>
 </li>
 </ol>
 </li>
 </ol>
-<h2 id="vue脚手架配置代理"><a href="#vue脚手架配置代理" class="headerlink" title="vue脚手架配置代理"></a>vue脚手架配置代理</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><pre><code>在vue.config.js中添加如下配置：
+<h2 id="vue脚手架配置代理"><a href="#vue脚手架配置代理" class="headerlink" title="vue脚手架配置代理"></a>vue脚手架配置代理</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><pre><code class="hljs">在vue.config.js中添加如下配置：
 </code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">devServer</span>:&#123;</span><br><span class="line">  <span class="attr">proxy</span>:<span class="string">&quot;http://localhost:5000&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">devServer</span>:&#123;<br>  <span class="hljs-attr">proxy</span>:<span class="hljs-string">&quot;http://localhost:5000&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>说明：</p>
 <ol>
@@ -472,9 +526,9 @@
 <li>缺点：不能配置多个代理，不能灵活的控制请求是否走代理。</li>
 <li>工作方式：若按照上述配置代理，当请求了前端不存在的资源时，那么该请求会转发给服务器 （优先匹配前端资源）</li>
 </ol>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><pre><code>编写vue.config.js配置具体代理规则：
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><pre><code class="hljs">编写vue.config.js配置具体代理规则：
 </code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">devServer</span>: &#123;</span><br><span class="line">      <span class="attr">proxy</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;/api1&#x27;</span>: &#123;<span class="comment">// 匹配所有以 &#x27;/api1&#x27;开头的请求路径</span></span><br><span class="line">        <span class="attr">target</span>: <span class="string">&#x27;http://localhost:5000&#x27;</span>,<span class="comment">// 代理目标的基础路径</span></span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">pathRewrite</span>: &#123;<span class="string">&#x27;^/api1&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="string">&#x27;/api2&#x27;</span>: &#123;<span class="comment">// 匹配所有以 &#x27;/api2&#x27;开头的请求路径</span></span><br><span class="line">        <span class="attr">target</span>: <span class="string">&#x27;http://localhost:5001&#x27;</span>,<span class="comment">// 代理目标的基础路径</span></span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">pathRewrite</span>: &#123;<span class="string">&#x27;^/api2&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000</span></span><br><span class="line"><span class="comment">   changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:8080</span></span><br><span class="line"><span class="comment">   changeOrigin默认值为true</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>	<span class="hljs-attr">devServer</span>: &#123;<br>      <span class="hljs-attr">proxy</span>: &#123;<br>      <span class="hljs-string">&#x27;/api1&#x27;</span>: &#123;<span class="hljs-comment">// 匹配所有以 &#x27;/api1&#x27;开头的请求路径</span><br>        <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://localhost:5000&#x27;</span>,<span class="hljs-comment">// 代理目标的基础路径</span><br>        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">pathRewrite</span>: &#123;<span class="hljs-string">&#x27;^/api1&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>&#125;<br>      &#125;,<br>      <span class="hljs-string">&#x27;/api2&#x27;</span>: &#123;<span class="hljs-comment">// 匹配所有以 &#x27;/api2&#x27;开头的请求路径</span><br>        <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://localhost:5001&#x27;</span>,<span class="hljs-comment">// 代理目标的基础路径</span><br>        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">pathRewrite</span>: &#123;<span class="hljs-string">&#x27;^/api2&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>&#125;<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">   changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000</span><br><span class="hljs-comment">   changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:8080</span><br><span class="hljs-comment">   changeOrigin默认值为true</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
 
 <p>说明：</p>
 <ol>
@@ -489,36 +543,36 @@
 <li><p>使用方式：</p>
 <ol>
 <li><p>默认插槽：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">父组件中：</span><br><span class="line">        &lt;Category&gt;</span><br><span class="line">           &lt;div&gt;html结构1&lt;/div&gt;</span><br><span class="line">        &lt;/Category&gt;</span><br><span class="line">子组件中：</span><br><span class="line">        &lt;template&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">               &lt;!-- 定义插槽 --&gt;</span><br><span class="line">               &lt;slot&gt;插槽默认内容...&lt;/slot&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs vue">父组件中：<br>        &lt;Category&gt;<br>           &lt;div&gt;html结构1&lt;/div&gt;<br>        &lt;/Category&gt;<br>子组件中：<br>        &lt;template&gt;<br>            &lt;div&gt;<br>               &lt;!-- 定义插槽 --&gt;<br>               &lt;slot&gt;插槽默认内容...&lt;/slot&gt;<br>            &lt;/div&gt;<br>        &lt;/template&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>具名插槽：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">父组件中：</span><br><span class="line">        &lt;Category&gt;</span><br><span class="line">            &lt;template slot=&quot;center&quot;&gt;</span><br><span class="line">              &lt;div&gt;html结构1&lt;/div&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">            &lt;template v-slot:footer&gt;</span><br><span class="line">               &lt;div&gt;html结构2&lt;/div&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line">        &lt;/Category&gt;</span><br><span class="line">子组件中：</span><br><span class="line">        &lt;template&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">               &lt;!-- 定义插槽 --&gt;</span><br><span class="line">               &lt;slot name=&quot;center&quot;&gt;插槽默认内容...&lt;/slot&gt;</span><br><span class="line">               &lt;slot name=&quot;footer&quot;&gt;插槽默认内容...&lt;/slot&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs vue">父组件中：<br>        &lt;Category&gt;<br>            &lt;template slot=&quot;center&quot;&gt;<br>              &lt;div&gt;html结构1&lt;/div&gt;<br>            &lt;/template&gt;<br><br>            &lt;template v-slot:footer&gt;<br>               &lt;div&gt;html结构2&lt;/div&gt;<br>            &lt;/template&gt;<br>        &lt;/Category&gt;<br>子组件中：<br>        &lt;template&gt;<br>            &lt;div&gt;<br>               &lt;!-- 定义插槽 --&gt;<br>               &lt;slot name=&quot;center&quot;&gt;插槽默认内容...&lt;/slot&gt;<br>               &lt;slot name=&quot;footer&quot;&gt;插槽默认内容...&lt;/slot&gt;<br>            &lt;/div&gt;<br>        &lt;/template&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>作用域插槽：</p>
 <ol>
 <li><p>理解：<span style="color:red">数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。</span>（games数据在Category组件中，但使用数据所遍历出来的结构由App组件决定）</p>
 </li>
 <li><p>具体编码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">父组件中：</span><br><span class="line">		&lt;Category&gt;</span><br><span class="line">			&lt;template scope=&quot;scopeData&quot;&gt;</span><br><span class="line">				&lt;!-- 生成的是ul列表 --&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&lt;li v-for=&quot;g in scopeData.games&quot; :key=&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">			&lt;/template&gt;</span><br><span class="line">		&lt;/Category&gt;</span><br><span class="line"></span><br><span class="line">		&lt;Category&gt;</span><br><span class="line">			&lt;template slot-scope=&quot;scopeData&quot;&gt;</span><br><span class="line">				&lt;!-- 生成的是h4标题 --&gt;</span><br><span class="line">				&lt;h4 v-for=&quot;g in scopeData.games&quot; :key=&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;/h4&gt;</span><br><span class="line">			&lt;/template&gt;</span><br><span class="line">		&lt;/Category&gt;</span><br><span class="line">子组件中：</span><br><span class="line">        &lt;template&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;slot :games=&quot;games&quot;&gt;&lt;/slot&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">		</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            export default &#123;</span><br><span class="line">                name:&#x27;Category&#x27;,</span><br><span class="line">                props:[&#x27;title&#x27;],</span><br><span class="line">                //数据在子组件自身</span><br><span class="line">                data() &#123;</span><br><span class="line">                    return &#123;</span><br><span class="line">                        games:[&#x27;红色警戒&#x27;,&#x27;穿越火线&#x27;,&#x27;劲舞团&#x27;,&#x27;超级玛丽&#x27;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs vue">父组件中：<br>		&lt;Category&gt;<br>			&lt;template scope=&quot;scopeData&quot;&gt;<br>				&lt;!-- 生成的是ul列表 --&gt;<br>				&lt;ul&gt;<br>					&lt;li v-for=&quot;g in scopeData.games&quot; :key=&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;/li&gt;<br>				&lt;/ul&gt;<br>			&lt;/template&gt;<br>		&lt;/Category&gt;<br><br>		&lt;Category&gt;<br>			&lt;template slot-scope=&quot;scopeData&quot;&gt;<br>				&lt;!-- 生成的是h4标题 --&gt;<br>				&lt;h4 v-for=&quot;g in scopeData.games&quot; :key=&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;/h4&gt;<br>			&lt;/template&gt;<br>		&lt;/Category&gt;<br>子组件中：<br>        &lt;template&gt;<br>            &lt;div&gt;<br>                &lt;slot :games=&quot;games&quot;&gt;&lt;/slot&gt;<br>            &lt;/div&gt;<br>        &lt;/template&gt;<br>		<br>        &lt;script&gt;<br>            export default &#123;<br>                name:&#x27;Category&#x27;,<br>                props:[&#x27;title&#x27;],<br>                //数据在子组件自身<br>                data() &#123;<br>                    return &#123;<br>                        games:[&#x27;红色警戒&#x27;,&#x27;穿越火线&#x27;,&#x27;劲舞团&#x27;,&#x27;超级玛丽&#x27;]<br>                    &#125;<br>                &#125;,<br>            &#125;<br>        &lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">   <br></code></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><pre><code>    在Vue中实现集中式状态（数据）管理的一个Vue插件，对vue应用中多个组件的共享状态进行集中式的管理（读/写），也是一种组件间通信的方式，且适用于任意组件间通信。
+<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><pre><code class="hljs">    在Vue中实现集中式状态（数据）管理的一个Vue插件，对vue应用中多个组件的共享状态进行集中式的管理（读/写），也是一种组件间通信的方式，且适用于任意组件间通信。
 </code></pre>
-<h3 id="2-何时使用？"><a href="#2-何时使用？" class="headerlink" title="2.何时使用？"></a>2.何时使用？</h3><pre><code>    多个组件需要共享数据时
+<h3 id="2-何时使用？"><a href="#2-何时使用？" class="headerlink" title="2.何时使用？"></a>2.何时使用？</h3><pre><code class="hljs">    多个组件需要共享数据时
 </code></pre>
 <h3 id="3-搭建vuex环境"><a href="#3-搭建vuex环境" class="headerlink" title="3.搭建vuex环境"></a>3.搭建vuex环境</h3><ol>
 <li><p>创建文件：<code>src/store/index.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入Vue核心库</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="comment">//引入Vuex</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="comment">//应用Vuex插件</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//准备actions对象——响应组件中用户的动作</span></span><br><span class="line"><span class="keyword">const</span> actions = &#123;&#125;</span><br><span class="line"><span class="comment">//准备mutations对象——修改state中的数据</span></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;&#125;</span><br><span class="line"><span class="comment">//准备state对象——保存具体的数据</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建并暴露store</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">	actions,</span><br><span class="line">	mutations,</span><br><span class="line">	state</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//引入Vue核心库</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-comment">//引入Vuex</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vuex</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-comment">//应用Vuex插件</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">Vuex</span>)<br><br><span class="hljs-comment">//准备actions对象——响应组件中用户的动作</span><br><span class="hljs-keyword">const</span> actions = &#123;&#125;<br><span class="hljs-comment">//准备mutations对象——修改state中的数据</span><br><span class="hljs-keyword">const</span> mutations = &#123;&#125;<br><span class="hljs-comment">//准备state对象——保存具体的数据</span><br><span class="hljs-keyword">const</span> state = &#123;&#125;<br><br><span class="hljs-comment">//创建并暴露store</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>	actions,<br>	mutations,<br>	state<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>main.js</code>中创建vm时传入<code>store</code>配置项</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="comment">//引入store</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建vm</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	<span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> <span class="title function_">h</span>(<span class="title class_">App</span>),</span><br><span class="line">	store</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">......<br><span class="hljs-comment">//引入store</span><br><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./store&#x27;</span><br>......<br><br><span class="hljs-comment">//创建vm</span><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>	<span class="hljs-attr">el</span>:<span class="hljs-string">&#x27;#app&#x27;</span>,<br>	<span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-title class_">App</span>),<br>	store<br>&#125;)<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="4-基本使用"><a href="#4-基本使用" class="headerlink" title="4.基本使用"></a>4.基本使用</h3><ol>
 <li><p>初始化数据、配置<code>actions</code>、配置<code>mutations</code>，操作文件<code>store.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入Vue核心库</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="comment">//引入Vuex</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="comment">//引用Vuex</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">    <span class="comment">//响应组件中加的动作</span></span><br><span class="line">	<span class="title function_">jia</span>(<span class="params">context,value</span>)&#123;</span><br><span class="line">		<span class="comment">// console.log(&#x27;actions中的jia被调用了&#x27;,miniStore,value)</span></span><br><span class="line">		context.<span class="title function_">commit</span>(<span class="string">&#x27;JIA&#x27;</span>,value)</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">    <span class="comment">//执行加</span></span><br><span class="line">	<span class="title function_">JIA</span>(<span class="params">state,value</span>)&#123;</span><br><span class="line">		<span class="comment">// console.log(&#x27;mutations中的JIA被调用了&#x27;,state,value)</span></span><br><span class="line">		state.<span class="property">sum</span> += value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化数据</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">   <span class="attr">sum</span>:<span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建并暴露store</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">	actions,</span><br><span class="line">	mutations,</span><br><span class="line">	state,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//引入Vue核心库</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-comment">//引入Vuex</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vuex</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-comment">//引用Vuex</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">Vuex</span>)<br><br><span class="hljs-keyword">const</span> actions = &#123;<br>    <span class="hljs-comment">//响应组件中加的动作</span><br>	<span class="hljs-title function_">jia</span>(<span class="hljs-params">context,value</span>)&#123;<br>		<span class="hljs-comment">// console.log(&#x27;actions中的jia被调用了&#x27;,miniStore,value)</span><br>		context.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;JIA&#x27;</span>,value)<br>	&#125;,<br>&#125;<br><br><span class="hljs-keyword">const</span> mutations = &#123;<br>    <span class="hljs-comment">//执行加</span><br>	<span class="hljs-title function_">JIA</span>(<span class="hljs-params">state,value</span>)&#123;<br>		<span class="hljs-comment">// console.log(&#x27;mutations中的JIA被调用了&#x27;,state,value)</span><br>		state.<span class="hljs-property">sum</span> += value<br>	&#125;<br>&#125;<br><br><span class="hljs-comment">//初始化数据</span><br><span class="hljs-keyword">const</span> state = &#123;<br>   <span class="hljs-attr">sum</span>:<span class="hljs-number">0</span><br>&#125;<br><br><span class="hljs-comment">//创建并暴露store</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>	actions,<br>	mutations,<br>	state,<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>组件中读取vuex中的数据：<code>$store.state.sum</code></p>
 </li>
@@ -532,23 +586,23 @@
 <li><p>概念：当state中的数据需要经过加工后再使用时，可以使用getters加工。</p>
 </li>
 <li><p>在<code>store.js</code>中追加<code>getters</code>配置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">	<span class="title function_">bigSum</span>(<span class="params">state</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> state.<span class="property">sum</span> * <span class="number">10</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建并暴露store</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">	......</span><br><span class="line">	getters</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js">......<br><br><span class="hljs-keyword">const</span> getters = &#123;<br>	<span class="hljs-title function_">bigSum</span>(<span class="hljs-params">state</span>)&#123;<br>		<span class="hljs-keyword">return</span> state.<span class="hljs-property">sum</span> * <span class="hljs-number">10</span><br>	&#125;<br>&#125;<br><br><span class="hljs-comment">//创建并暴露store</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>	......<br>	getters<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>组件中读取数据：<code>$store.getters.bigSum</code></p>
 </li>
 </ol>
 <h3 id="6-四个map方法的使用"><a href="#6-四个map方法的使用" class="headerlink" title="6.四个map方法的使用"></a>6.四个map方法的使用</h3><ol>
 <li><p><strong>mapState方法：</strong>用于帮助我们映射<code>state</code>中的数据为计算属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="comment">//借助mapState生成计算属性：sum、school、subject（对象写法）</span></span><br><span class="line">     ...<span class="title function_">mapState</span>(&#123;<span class="attr">sum</span>:<span class="string">&#x27;sum&#x27;</span>,<span class="attr">school</span>:<span class="string">&#x27;school&#x27;</span>,<span class="attr">subject</span>:<span class="string">&#x27;subject&#x27;</span>&#125;),</span><br><span class="line">         </span><br><span class="line">    <span class="comment">//借助mapState生成计算属性：sum、school、subject（数组写法）</span></span><br><span class="line">    ...<span class="title function_">mapState</span>([<span class="string">&#x27;sum&#x27;</span>,<span class="string">&#x27;school&#x27;</span>,<span class="string">&#x27;subject&#x27;</span>]),</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-comment">//借助mapState生成计算属性：sum、school、subject（对象写法）</span><br>     ...<span class="hljs-title function_">mapState</span>(&#123;<span class="hljs-attr">sum</span>:<span class="hljs-string">&#x27;sum&#x27;</span>,<span class="hljs-attr">school</span>:<span class="hljs-string">&#x27;school&#x27;</span>,<span class="hljs-attr">subject</span>:<span class="hljs-string">&#x27;subject&#x27;</span>&#125;),<br>         <br>    <span class="hljs-comment">//借助mapState生成计算属性：sum、school、subject（数组写法）</span><br>    ...<span class="hljs-title function_">mapState</span>([<span class="hljs-string">&#x27;sum&#x27;</span>,<span class="hljs-string">&#x27;school&#x27;</span>,<span class="hljs-string">&#x27;subject&#x27;</span>]),<br>&#125;,<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>mapGetters方法：</strong>用于帮助我们映射<code>getters</code>中的数据为计算属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="comment">//借助mapGetters生成计算属性：bigSum（对象写法）</span></span><br><span class="line">    ...<span class="title function_">mapGetters</span>(&#123;<span class="attr">bigSum</span>:<span class="string">&#x27;bigSum&#x27;</span>&#125;),</span><br><span class="line"></span><br><span class="line">    <span class="comment">//借助mapGetters生成计算属性：bigSum（数组写法）</span></span><br><span class="line">    ...<span class="title function_">mapGetters</span>([<span class="string">&#x27;bigSum&#x27;</span>])</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-comment">//借助mapGetters生成计算属性：bigSum（对象写法）</span><br>    ...<span class="hljs-title function_">mapGetters</span>(&#123;<span class="hljs-attr">bigSum</span>:<span class="hljs-string">&#x27;bigSum&#x27;</span>&#125;),<br><br>    <span class="hljs-comment">//借助mapGetters生成计算属性：bigSum（数组写法）</span><br>    ...<span class="hljs-title function_">mapGetters</span>([<span class="hljs-string">&#x27;bigSum&#x27;</span>])<br>&#125;,<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>mapActions方法：</strong>用于帮助我们生成与<code>actions</code>对话的方法，即：包含<code>$store.dispatch(xxx)</code>的函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">    <span class="comment">//靠mapActions生成：incrementOdd、incrementWait（对象形式）</span></span><br><span class="line">    ...<span class="title function_">mapActions</span>(&#123;<span class="attr">incrementOdd</span>:<span class="string">&#x27;jiaOdd&#x27;</span>,<span class="attr">incrementWait</span>:<span class="string">&#x27;jiaWait&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//靠mapActions生成：incrementOdd、incrementWait（数组形式）</span></span><br><span class="line">    ...<span class="title function_">mapActions</span>([<span class="string">&#x27;jiaOdd&#x27;</span>,<span class="string">&#x27;jiaWait&#x27;</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">methods</span>:&#123;<br>    <span class="hljs-comment">//靠mapActions生成：incrementOdd、incrementWait（对象形式）</span><br>    ...<span class="hljs-title function_">mapActions</span>(&#123;<span class="hljs-attr">incrementOdd</span>:<span class="hljs-string">&#x27;jiaOdd&#x27;</span>,<span class="hljs-attr">incrementWait</span>:<span class="hljs-string">&#x27;jiaWait&#x27;</span>&#125;)<br><br>    <span class="hljs-comment">//靠mapActions生成：incrementOdd、incrementWait（数组形式）</span><br>    ...<span class="hljs-title function_">mapActions</span>([<span class="hljs-string">&#x27;jiaOdd&#x27;</span>,<span class="hljs-string">&#x27;jiaWait&#x27;</span>])<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>mapMutations方法：</strong>用于帮助我们生成与<code>mutations</code>对话的方法，即：包含<code>$store.commit(xxx)</code>的函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">    <span class="comment">//靠mapActions生成：increment、decrement（对象形式）</span></span><br><span class="line">    ...<span class="title function_">mapMutations</span>(&#123;<span class="attr">increment</span>:<span class="string">&#x27;JIA&#x27;</span>,<span class="attr">decrement</span>:<span class="string">&#x27;JIAN&#x27;</span>&#125;),</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//靠mapMutations生成：JIA、JIAN（对象形式）</span></span><br><span class="line">    ...<span class="title function_">mapMutations</span>([<span class="string">&#x27;JIA&#x27;</span>,<span class="string">&#x27;JIAN&#x27;</span>]),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">methods</span>:&#123;<br>    <span class="hljs-comment">//靠mapActions生成：increment、decrement（对象形式）</span><br>    ...<span class="hljs-title function_">mapMutations</span>(&#123;<span class="hljs-attr">increment</span>:<span class="hljs-string">&#x27;JIA&#x27;</span>,<span class="hljs-attr">decrement</span>:<span class="hljs-string">&#x27;JIAN&#x27;</span>&#125;),<br>    <br>    <span class="hljs-comment">//靠mapMutations生成：JIA、JIAN（对象形式）</span><br>    ...<span class="hljs-title function_">mapMutations</span>([<span class="hljs-string">&#x27;JIA&#x27;</span>,<span class="hljs-string">&#x27;JIAN&#x27;</span>]),<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <blockquote>
 <p>备注：mapActions与mapMutations使用时，若需要传递参数需要：在模板中绑定事件时传递好参数，否则参数是事件对象。</p>
@@ -557,19 +611,19 @@
 <li><p>目的：让代码更好维护，让多种数据分类更加明确。</p>
 </li>
 <li><p>修改<code>store.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> countAbout = &#123;</span><br><span class="line">  <span class="attr">namespaced</span>:<span class="literal">true</span>,<span class="comment">//开启命名空间</span></span><br><span class="line">  <span class="attr">state</span>:&#123;<span class="attr">x</span>:<span class="number">1</span>&#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123; ... &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123; ... &#125;,</span><br><span class="line">  <span class="attr">getters</span>: &#123;</span><br><span class="line">    <span class="title function_">bigSum</span>(<span class="params">state</span>)&#123;</span><br><span class="line">       <span class="keyword">return</span> state.<span class="property">sum</span> * <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> personAbout = &#123;</span><br><span class="line">  <span class="attr">namespaced</span>:<span class="literal">true</span>,<span class="comment">//开启命名空间</span></span><br><span class="line">  <span class="attr">state</span>:&#123; ... &#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123; ... &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">  <span class="attr">modules</span>: &#123;</span><br><span class="line">    countAbout,</span><br><span class="line">    personAbout</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> countAbout = &#123;<br>  <span class="hljs-attr">namespaced</span>:<span class="hljs-literal">true</span>,<span class="hljs-comment">//开启命名空间</span><br>  <span class="hljs-attr">state</span>:&#123;<span class="hljs-attr">x</span>:<span class="hljs-number">1</span>&#125;,<br>  <span class="hljs-attr">mutations</span>: &#123; ... &#125;,<br>  <span class="hljs-attr">actions</span>: &#123; ... &#125;,<br>  <span class="hljs-attr">getters</span>: &#123;<br>    <span class="hljs-title function_">bigSum</span>(<span class="hljs-params">state</span>)&#123;<br>       <span class="hljs-keyword">return</span> state.<span class="hljs-property">sum</span> * <span class="hljs-number">10</span><br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> personAbout = &#123;<br>  <span class="hljs-attr">namespaced</span>:<span class="hljs-literal">true</span>,<span class="hljs-comment">//开启命名空间</span><br>  <span class="hljs-attr">state</span>:&#123; ... &#125;,<br>  <span class="hljs-attr">mutations</span>: &#123; ... &#125;,<br>  <span class="hljs-attr">actions</span>: &#123; ... &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>  <span class="hljs-attr">modules</span>: &#123;<br>    countAbout,<br>    personAbout<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开启命名空间后，组件中读取state数据：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：自己直接读取</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>.<span class="property">personAbout</span>.<span class="property">list</span></span><br><span class="line"><span class="comment">//方式二：借助mapState读取：</span></span><br><span class="line">...<span class="title function_">mapState</span>(<span class="string">&#x27;countAbout&#x27;</span>,[<span class="string">&#x27;sum&#x27;</span>,<span class="string">&#x27;school&#x27;</span>,<span class="string">&#x27;subject&#x27;</span>]),</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//方式一：自己直接读取</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$store</span>.<span class="hljs-property">state</span>.<span class="hljs-property">personAbout</span>.<span class="hljs-property">list</span><br><span class="hljs-comment">//方式二：借助mapState读取：</span><br>...<span class="hljs-title function_">mapState</span>(<span class="hljs-string">&#x27;countAbout&#x27;</span>,[<span class="hljs-string">&#x27;sum&#x27;</span>,<span class="hljs-string">&#x27;school&#x27;</span>,<span class="hljs-string">&#x27;subject&#x27;</span>]),<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开启命名空间后，组件中读取getters数据：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：自己直接读取</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">getters</span>[<span class="string">&#x27;personAbout/firstPersonName&#x27;</span>]</span><br><span class="line"><span class="comment">//方式二：借助mapGetters读取：</span></span><br><span class="line">...<span class="title function_">mapGetters</span>(<span class="string">&#x27;countAbout&#x27;</span>,[<span class="string">&#x27;bigSum&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//方式一：自己直接读取</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$store</span>.<span class="hljs-property">getters</span>[<span class="hljs-string">&#x27;personAbout/firstPersonName&#x27;</span>]<br><span class="hljs-comment">//方式二：借助mapGetters读取：</span><br>...<span class="hljs-title function_">mapGetters</span>(<span class="hljs-string">&#x27;countAbout&#x27;</span>,[<span class="hljs-string">&#x27;bigSum&#x27;</span>])<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开启命名空间后，组件中调用dispatch</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：自己直接dispatch</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">dispatch</span>(<span class="string">&#x27;personAbout/addPersonWang&#x27;</span>,person)</span><br><span class="line"><span class="comment">//方式二：借助mapActions：</span></span><br><span class="line">...<span class="title function_">mapActions</span>(<span class="string">&#x27;countAbout&#x27;</span>,&#123;<span class="attr">incrementOdd</span>:<span class="string">&#x27;jiaOdd&#x27;</span>,<span class="attr">incrementWait</span>:<span class="string">&#x27;jiaWait&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//方式一：自己直接dispatch</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$store</span>.<span class="hljs-title function_">dispatch</span>(<span class="hljs-string">&#x27;personAbout/addPersonWang&#x27;</span>,person)<br><span class="hljs-comment">//方式二：借助mapActions：</span><br>...<span class="hljs-title function_">mapActions</span>(<span class="hljs-string">&#x27;countAbout&#x27;</span>,&#123;<span class="hljs-attr">incrementOdd</span>:<span class="hljs-string">&#x27;jiaOdd&#x27;</span>,<span class="hljs-attr">incrementWait</span>:<span class="hljs-string">&#x27;jiaWait&#x27;</span>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开启命名空间后，组件中调用commit</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一：自己直接commit</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;personAbout/ADD_PERSON&#x27;</span>,person)</span><br><span class="line"><span class="comment">//方式二：借助mapMutations：</span></span><br><span class="line">...<span class="title function_">mapMutations</span>(<span class="string">&#x27;countAbout&#x27;</span>,&#123;<span class="attr">increment</span>:<span class="string">&#x27;JIA&#x27;</span>,<span class="attr">decrement</span>:<span class="string">&#x27;JIAN&#x27;</span>&#125;),</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//方式一：自己直接commit</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$store</span>.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;personAbout/ADD_PERSON&#x27;</span>,person)<br><span class="hljs-comment">//方式二：借助mapMutations：</span><br>...<span class="hljs-title function_">mapMutations</span>(<span class="hljs-string">&#x27;countAbout&#x27;</span>,&#123;<span class="hljs-attr">increment</span>:<span class="hljs-string">&#x27;JIA&#x27;</span>,<span class="hljs-attr">decrement</span>:<span class="hljs-string">&#x27;JIAN&#x27;</span>&#125;),<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
 <li>理解： 一个路由（route）就是一组映射关系（key - value），多个路由需要路由器（router）进行管理。</li>
@@ -581,13 +635,13 @@
 <li><p>应用插件：<code>Vue.use(VueRouter)</code></p>
 </li>
 <li><p>编写router配置项:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入VueRouter</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">VueRouter</span> <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="comment">//引入Luyou 组件</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">About</span> <span class="keyword">from</span> <span class="string">&#x27;../components/About&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&#x27;../components/Home&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建router实例对象，去管理一组一组的路由规则</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">	<span class="attr">routes</span>:[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">path</span>:<span class="string">&#x27;/about&#x27;</span>,</span><br><span class="line">			<span class="attr">component</span>:<span class="title class_">About</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">			<span class="attr">component</span>:<span class="title class_">Home</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//暴露router</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//引入VueRouter</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueRouter</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span><br><span class="hljs-comment">//引入Luyou 组件</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">About</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../components/About&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Home</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../components/Home&#x27;</span><br><br><span class="hljs-comment">//创建router实例对象，去管理一组一组的路由规则</span><br><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VueRouter</span>(&#123;<br>	<span class="hljs-attr">routes</span>:[<br>		&#123;<br>			<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/about&#x27;</span>,<br>			<span class="hljs-attr">component</span>:<span class="hljs-title class_">About</span><br>		&#125;,<br>		&#123;<br>			<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/home&#x27;</span>,<br>			<span class="hljs-attr">component</span>:<span class="hljs-title class_">Home</span><br>		&#125;<br>	]<br>&#125;)<br><br><span class="hljs-comment">//暴露router</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>实现切换（active-class可配置高亮样式）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link active-class=&quot;active&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;router-link active-class=&quot;active&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>指定展示位置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;router-view&gt;&lt;/router-view&gt;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="2-几个注意点"><a href="#2-几个注意点" class="headerlink" title="2.几个注意点"></a>2.几个注意点</h3><ol>
 <li>路由组件通常存放在<code>pages</code>文件夹，一般组件通常存放在<code>components</code>文件夹。</li>
@@ -597,17 +651,17 @@
 </ol>
 <h3 id="3-多级路由（多级路由）"><a href="#3-多级路由（多级路由）" class="headerlink" title="3.多级路由（多级路由）"></a>3.多级路由（多级路由）</h3><ol>
 <li><p>配置路由规则，使用children配置项：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">routes</span>:[</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">path</span>:<span class="string">&#x27;/about&#x27;</span>,</span><br><span class="line">		<span class="attr">component</span>:<span class="title class_">About</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">		<span class="attr">component</span>:<span class="title class_">Home</span>,</span><br><span class="line">		<span class="attr">children</span>:[ <span class="comment">//通过children配置子级路由</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">path</span>:<span class="string">&#x27;news&#x27;</span>, <span class="comment">//此处一定不要写：/news</span></span><br><span class="line">				<span class="attr">component</span>:<span class="title class_">News</span></span><br><span class="line">			&#125;,</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">path</span>:<span class="string">&#x27;message&#x27;</span>,<span class="comment">//此处一定不要写：/message</span></span><br><span class="line">				<span class="attr">component</span>:<span class="title class_">Message</span></span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">routes</span>:[<br>	&#123;<br>		<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/about&#x27;</span>,<br>		<span class="hljs-attr">component</span>:<span class="hljs-title class_">About</span>,<br>	&#125;,<br>	&#123;<br>		<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/home&#x27;</span>,<br>		<span class="hljs-attr">component</span>:<span class="hljs-title class_">Home</span>,<br>		<span class="hljs-attr">children</span>:[ <span class="hljs-comment">//通过children配置子级路由</span><br>			&#123;<br>				<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;news&#x27;</span>, <span class="hljs-comment">//此处一定不要写：/news</span><br>				<span class="hljs-attr">component</span>:<span class="hljs-title class_">News</span><br>			&#125;,<br>			&#123;<br>				<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;message&#x27;</span>,<span class="hljs-comment">//此处一定不要写：/message</span><br>				<span class="hljs-attr">component</span>:<span class="hljs-title class_">Message</span><br>			&#125;<br>		]<br>	&#125;<br>]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>跳转（要写完整路径）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="4-路由的query参数"><a href="#4-路由的query参数" class="headerlink" title="4.路由的query参数"></a>4.路由的query参数</h3><ol>
 <li><p>传递参数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;</span><br><span class="line">&lt;router-link :to=&quot;/home/message/detail?id=666&amp;title=你好&quot;&gt;跳转&lt;/router-link&gt;</span><br><span class="line">				</span><br><span class="line">&lt;!-- 跳转并携带query参数，to的对象写法 --&gt;</span><br><span class="line">&lt;router-link </span><br><span class="line">	:to=&quot;&#123;</span><br><span class="line">		path:&#x27;/home/message/detail&#x27;,</span><br><span class="line">		query:&#123;</span><br><span class="line">		   id:666,</span><br><span class="line">            title:&#x27;你好&#x27;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;&quot;</span><br><span class="line">&gt;跳转&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;<br>&lt;router-link :to=&quot;/home/message/detail?id=666&amp;title=你好&quot;&gt;跳转&lt;/router-link&gt;<br>				<br>&lt;!-- 跳转并携带query参数，to的对象写法 --&gt;<br>&lt;router-link <br>	:to=&quot;&#123;<br>		path:&#x27;/home/message/detail&#x27;,<br>		query:&#123;<br>		   id:666,<br>            title:&#x27;你好&#x27;<br>		&#125;<br>	&#125;&quot;<br>&gt;跳转&lt;/router-link&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>接收参数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$route.<span class="property">query</span>.<span class="property">id</span></span><br><span class="line">$route.<span class="property">query</span>.<span class="property">title</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">$route.<span class="hljs-property">query</span>.<span class="hljs-property">id</span><br>$route.<span class="hljs-property">query</span>.<span class="hljs-property">title</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="5-命名路由"><a href="#5-命名路由" class="headerlink" title="5.命名路由"></a>5.命名路由</h3><ol>
 <li><p>作用：可以简化路由的跳转。</p>
@@ -615,30 +669,30 @@
 <li><p>如何使用</p>
 <ol>
 <li><p>给路由命名：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">path</span>:<span class="string">&#x27;/demo&#x27;</span>,</span><br><span class="line">	<span class="attr">component</span>:<span class="title class_">Demo</span>,</span><br><span class="line">	<span class="attr">children</span>:[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">path</span>:<span class="string">&#x27;test&#x27;</span>,</span><br><span class="line">			<span class="attr">component</span>:<span class="title class_">Test</span>,</span><br><span class="line">			<span class="attr">children</span>:[</span><br><span class="line">				&#123;</span><br><span class="line">                      <span class="attr">name</span>:<span class="string">&#x27;hello&#x27;</span> <span class="comment">//给路由命名</span></span><br><span class="line">					<span class="attr">path</span>:<span class="string">&#x27;welcome&#x27;</span>,</span><br><span class="line">					<span class="attr">component</span>:<span class="title class_">Hello</span>,</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>	<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/demo&#x27;</span>,<br>	<span class="hljs-attr">component</span>:<span class="hljs-title class_">Demo</span>,<br>	<span class="hljs-attr">children</span>:[<br>		&#123;<br>			<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;test&#x27;</span>,<br>			<span class="hljs-attr">component</span>:<span class="hljs-title class_">Test</span>,<br>			<span class="hljs-attr">children</span>:[<br>				&#123;<br>                      <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;hello&#x27;</span> <span class="hljs-comment">//给路由命名</span><br>					<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;welcome&#x27;</span>,<br>					<span class="hljs-attr">component</span>:<span class="hljs-title class_">Hello</span>,<br>				&#125;<br>			]<br>		&#125;<br>	]<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>简化跳转：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--简化前，需要写完整的路径 --&gt;</span><br><span class="line">&lt;router-link to=&quot;/demo/test/welcome&quot;&gt;跳转&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--简化后，直接通过名字跳转 --&gt;</span><br><span class="line">&lt;router-link :to=&quot;&#123;name:&#x27;hello&#x27;&#125;&quot;&gt;跳转&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--简化写法配合传递参数 --&gt;</span><br><span class="line">&lt;router-link </span><br><span class="line">	:to=&quot;&#123;</span><br><span class="line">		name:&#x27;hello&#x27;,</span><br><span class="line">		query:&#123;</span><br><span class="line">		   id:666,</span><br><span class="line">            title:&#x27;你好&#x27;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;&quot;</span><br><span class="line">&gt;跳转&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;!--简化前，需要写完整的路径 --&gt;<br>&lt;router-link to=&quot;/demo/test/welcome&quot;&gt;跳转&lt;/router-link&gt;<br><br>&lt;!--简化后，直接通过名字跳转 --&gt;<br>&lt;router-link :to=&quot;&#123;name:&#x27;hello&#x27;&#125;&quot;&gt;跳转&lt;/router-link&gt;<br><br>&lt;!--简化写法配合传递参数 --&gt;<br>&lt;router-link <br>	:to=&quot;&#123;<br>		name:&#x27;hello&#x27;,<br>		query:&#123;<br>		   id:666,<br>            title:&#x27;你好&#x27;<br>		&#125;<br>	&#125;&quot;<br>&gt;跳转&lt;/router-link&gt;<br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ol>
 <h3 id="6-路由的params参数"><a href="#6-路由的params参数" class="headerlink" title="6.路由的params参数"></a>6.路由的params参数</h3><ol>
 <li><p>配置路由，声明接收params参数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">	<span class="attr">component</span>:<span class="title class_">Home</span>,</span><br><span class="line">	<span class="attr">children</span>:[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">path</span>:<span class="string">&#x27;news&#x27;</span>,</span><br><span class="line">			<span class="attr">component</span>:<span class="title class_">News</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">component</span>:<span class="title class_">Message</span>,</span><br><span class="line">			<span class="attr">children</span>:[</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="attr">name</span>:<span class="string">&#x27;xiangqing&#x27;</span>,</span><br><span class="line">					<span class="attr">path</span>:<span class="string">&#x27;detail/:id/:title&#x27;</span>, <span class="comment">//使用占位符声明接收params参数</span></span><br><span class="line">					<span class="attr">component</span>:<span class="title class_">Detail</span></span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>	<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/home&#x27;</span>,<br>	<span class="hljs-attr">component</span>:<span class="hljs-title class_">Home</span>,<br>	<span class="hljs-attr">children</span>:[<br>		&#123;<br>			<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;news&#x27;</span>,<br>			<span class="hljs-attr">component</span>:<span class="hljs-title class_">News</span><br>		&#125;,<br>		&#123;<br>			<span class="hljs-attr">component</span>:<span class="hljs-title class_">Message</span>,<br>			<span class="hljs-attr">children</span>:[<br>				&#123;<br>					<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;xiangqing&#x27;</span>,<br>					<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;detail/:id/:title&#x27;</span>, <span class="hljs-comment">//使用占位符声明接收params参数</span><br>					<span class="hljs-attr">component</span>:<span class="hljs-title class_">Detail</span><br>				&#125;<br>			]<br>		&#125;<br>	]<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>传递参数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 跳转并携带params参数，to的字符串写法 --&gt;</span><br><span class="line">&lt;router-link :to=&quot;/home/message/detail/666/你好&quot;&gt;跳转&lt;/router-link&gt;</span><br><span class="line">				</span><br><span class="line">&lt;!-- 跳转并携带params参数，to的对象写法 --&gt;</span><br><span class="line">&lt;router-link </span><br><span class="line">	:to=&quot;&#123;</span><br><span class="line">		name:&#x27;xiangqing&#x27;,</span><br><span class="line">		params:&#123;</span><br><span class="line">		   id:666,</span><br><span class="line">            title:&#x27;你好&#x27;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;&quot;</span><br><span class="line">&gt;跳转&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;!-- 跳转并携带params参数，to的字符串写法 --&gt;<br>&lt;router-link :to=&quot;/home/message/detail/666/你好&quot;&gt;跳转&lt;/router-link&gt;<br>				<br>&lt;!-- 跳转并携带params参数，to的对象写法 --&gt;<br>&lt;router-link <br>	:to=&quot;&#123;<br>		name:&#x27;xiangqing&#x27;,<br>		params:&#123;<br>		   id:666,<br>            title:&#x27;你好&#x27;<br>		&#125;<br>	&#125;&quot;<br>&gt;跳转&lt;/router-link&gt;<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>特别注意：路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！</p>
 </blockquote>
 </li>
 <li><p>接收参数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$route.<span class="property">params</span>.<span class="property">id</span></span><br><span class="line">$route.<span class="property">params</span>.<span class="property">title</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">$route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span><br>$route.<span class="hljs-property">params</span>.<span class="hljs-property">title</span><br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="7-路由的props配置"><a href="#7-路由的props配置" class="headerlink" title="7.路由的props配置"></a>7.路由的props配置</h3><pre><code>作用：让路由组件更方便的收到参数
+<h3 id="7-路由的props配置"><a href="#7-路由的props配置" class="headerlink" title="7.路由的props配置"></a>7.路由的props配置</h3><pre><code class="hljs">作用：让路由组件更方便的收到参数
 </code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="string">&#x27;xiangqing&#x27;</span>,</span><br><span class="line">	<span class="attr">path</span>:<span class="string">&#x27;detail/:id&#x27;</span>,</span><br><span class="line">	<span class="attr">component</span>:<span class="title class_">Detail</span>,</span><br><span class="line"></span><br><span class="line">	<span class="comment">//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件</span></span><br><span class="line">	<span class="comment">// props:&#123;a:900&#125;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件</span></span><br><span class="line">	<span class="comment">// props:true</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件</span></span><br><span class="line">	<span class="title function_">props</span>(<span class="params">route</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">id</span>:route.<span class="property">query</span>.<span class="property">id</span>,</span><br><span class="line">			<span class="attr">title</span>:route.<span class="property">query</span>.<span class="property">title</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;xiangqing&#x27;</span>,<br>	<span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;detail/:id&#x27;</span>,<br>	<span class="hljs-attr">component</span>:<span class="hljs-title class_">Detail</span>,<br><br>	<span class="hljs-comment">//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件</span><br>	<span class="hljs-comment">// props:&#123;a:900&#125;</span><br><br>	<span class="hljs-comment">//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件</span><br>	<span class="hljs-comment">// props:true</span><br>	<br>	<span class="hljs-comment">//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件</span><br>	<span class="hljs-title function_">props</span>(<span class="hljs-params">route</span>)&#123;<br>		<span class="hljs-keyword">return</span> &#123;<br>			<span class="hljs-attr">id</span>:route.<span class="hljs-property">query</span>.<span class="hljs-property">id</span>,<br>			<span class="hljs-attr">title</span>:route.<span class="hljs-property">query</span>.<span class="hljs-property">title</span><br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="8-的replace属性"><a href="#8-的replace属性" class="headerlink" title="8.&lt;router-link&gt;的replace属性"></a>8.<code>&lt;router-link&gt;</code>的replace属性</h3><ol>
 <li>作用：控制路由跳转时操作浏览器历史记录的模式</li>
@@ -649,13 +703,13 @@
 <li><p>作用：不借助<code>&lt;router-link&gt; </code>实现路由跳转，让路由跳转更加灵活</p>
 </li>
 <li><p>具体编码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//$router的两个API</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="string">&#x27;xiangqing&#x27;</span>,</span><br><span class="line">		<span class="attr">params</span>:&#123;</span><br><span class="line">			<span class="attr">id</span>:xxx,</span><br><span class="line">			<span class="attr">title</span>:xxx</span><br><span class="line">		&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">replace</span>(&#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="string">&#x27;xiangqing&#x27;</span>,</span><br><span class="line">		<span class="attr">params</span>:&#123;</span><br><span class="line">			<span class="attr">id</span>:xxx,</span><br><span class="line">			<span class="attr">title</span>:xxx</span><br><span class="line">		&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">forward</span>() <span class="comment">//前进</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">back</span>() <span class="comment">//后退</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">go</span>() <span class="comment">//可前进也可后退</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//$router的两个API</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(&#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;xiangqing&#x27;</span>,<br>		<span class="hljs-attr">params</span>:&#123;<br>			<span class="hljs-attr">id</span>:xxx,<br>			<span class="hljs-attr">title</span>:xxx<br>		&#125;<br>&#125;)<br><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">replace</span>(&#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;xiangqing&#x27;</span>,<br>		<span class="hljs-attr">params</span>:&#123;<br>			<span class="hljs-attr">id</span>:xxx,<br>			<span class="hljs-attr">title</span>:xxx<br>		&#125;<br>&#125;)<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">forward</span>() <span class="hljs-comment">//前进</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">back</span>() <span class="hljs-comment">//后退</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">go</span>() <span class="hljs-comment">//可前进也可后退</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="10-缓存路由组件"><a href="#10-缓存路由组件" class="headerlink" title="10.缓存路由组件"></a>10.缓存路由组件</h3><ol>
 <li><p>作用：让不展示的路由组件保持挂载，不被销毁。</p>
 </li>
 <li><p>具体编码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive include=&quot;News&quot;&gt; </span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;keep-alive include=&quot;News&quot;&gt; <br>    &lt;router-view&gt;&lt;/router-view&gt;<br>&lt;/keep-alive&gt;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="11-两个新的生命周期钩子"><a href="#11-两个新的生命周期钩子" class="headerlink" title="11.两个新的生命周期钩子"></a>11.两个新的生命周期钩子</h3><ol>
 <li>作用：路由组件所独有的两个钩子，用于捕获路由组件的激活状态。</li>
@@ -671,13 +725,13 @@
 <li><p>分类：全局守卫、独享守卫、组件内守卫</p>
 </li>
 <li><p>全局守卫:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局前置守卫：初始化时执行、每次路由切换前执行</span></span><br><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;beforeEach&#x27;</span>,to,<span class="keyword">from</span>)</span><br><span class="line">	<span class="keyword">if</span>(to.<span class="property">meta</span>.<span class="property">isAuth</span>)&#123; <span class="comment">//判断当前路由是否需要进行权限控制</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;school&#x27;</span>) === <span class="string">&#x27;atguigu&#x27;</span>)&#123; <span class="comment">//权限控制的具体规则</span></span><br><span class="line">			<span class="title function_">next</span>() <span class="comment">//放行</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="title function_">alert</span>(<span class="string">&#x27;暂无权限查看&#x27;</span>)</span><br><span class="line">			<span class="comment">// next(&#123;name:&#x27;guanyu&#x27;&#125;)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="title function_">next</span>() <span class="comment">//放行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局后置守卫：初始化时执行、每次路由切换后执行</span></span><br><span class="line">router.<span class="title function_">afterEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span></span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;afterEach&#x27;</span>,to,<span class="keyword">from</span>)</span><br><span class="line">	<span class="keyword">if</span>(to.<span class="property">meta</span>.<span class="property">title</span>)&#123; </span><br><span class="line">		<span class="variable language_">document</span>.<span class="property">title</span> = to.<span class="property">meta</span>.<span class="property">title</span> <span class="comment">//修改网页的title</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="variable language_">document</span>.<span class="property">title</span> = <span class="string">&#x27;vue_test&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//全局前置守卫：初始化时执行、每次路由切换前执行</span><br>router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-function">(<span class="hljs-params">to,<span class="hljs-keyword">from</span>,next</span>)=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;beforeEach&#x27;</span>,to,<span class="hljs-keyword">from</span>)<br>	<span class="hljs-keyword">if</span>(to.<span class="hljs-property">meta</span>.<span class="hljs-property">isAuth</span>)&#123; <span class="hljs-comment">//判断当前路由是否需要进行权限控制</span><br>		<span class="hljs-keyword">if</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;school&#x27;</span>) === <span class="hljs-string">&#x27;atguigu&#x27;</span>)&#123; <span class="hljs-comment">//权限控制的具体规则</span><br>			<span class="hljs-title function_">next</span>() <span class="hljs-comment">//放行</span><br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			<span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;暂无权限查看&#x27;</span>)<br>			<span class="hljs-comment">// next(&#123;name:&#x27;guanyu&#x27;&#125;)</span><br>		&#125;<br>	&#125;<span class="hljs-keyword">else</span>&#123;<br>		<span class="hljs-title function_">next</span>() <span class="hljs-comment">//放行</span><br>	&#125;<br>&#125;)<br><br><span class="hljs-comment">//全局后置守卫：初始化时执行、每次路由切换后执行</span><br>router.<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">(<span class="hljs-params">to,<span class="hljs-keyword">from</span></span>)=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;afterEach&#x27;</span>,to,<span class="hljs-keyword">from</span>)<br>	<span class="hljs-keyword">if</span>(to.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span>)&#123; <br>		<span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = to.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span> <span class="hljs-comment">//修改网页的title</span><br>	&#125;<span class="hljs-keyword">else</span>&#123;<br>		<span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&#x27;vue_test&#x27;</span><br>	&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>独享守卫:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">beforeEnter</span>(<span class="params">to,<span class="keyword">from</span>,next</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;beforeEnter&#x27;</span>,to,<span class="keyword">from</span>)</span><br><span class="line">	<span class="keyword">if</span>(to.<span class="property">meta</span>.<span class="property">isAuth</span>)&#123; <span class="comment">//判断当前路由是否需要进行权限控制</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;school&#x27;</span>) === <span class="string">&#x27;atguigu&#x27;</span>)&#123;</span><br><span class="line">			<span class="title function_">next</span>()</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="title function_">alert</span>(<span class="string">&#x27;暂无权限查看&#x27;</span>)</span><br><span class="line">			<span class="comment">// next(&#123;name:&#x27;guanyu&#x27;&#125;)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="title function_">next</span>()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">beforeEnter</span>(<span class="hljs-params">to,<span class="hljs-keyword">from</span>,next</span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;beforeEnter&#x27;</span>,to,<span class="hljs-keyword">from</span>)<br>	<span class="hljs-keyword">if</span>(to.<span class="hljs-property">meta</span>.<span class="hljs-property">isAuth</span>)&#123; <span class="hljs-comment">//判断当前路由是否需要进行权限控制</span><br>		<span class="hljs-keyword">if</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;school&#x27;</span>) === <span class="hljs-string">&#x27;atguigu&#x27;</span>)&#123;<br>			<span class="hljs-title function_">next</span>()<br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			<span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;暂无权限查看&#x27;</span>)<br>			<span class="hljs-comment">// next(&#123;name:&#x27;guanyu&#x27;&#125;)</span><br>		&#125;<br>	&#125;<span class="hljs-keyword">else</span>&#123;<br>		<span class="hljs-title function_">next</span>()<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>组件内守卫：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//进入守卫：通过路由规则，进入该组件时被调用</span></span><br><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//离开守卫：通过路由规则，离开该组件时被调用</span></span><br><span class="line">beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//进入守卫：通过路由规则，进入该组件时被调用</span><br>beforeRouteEnter (to, <span class="hljs-keyword">from</span>, next) &#123;<br>&#125;,<br><span class="hljs-comment">//离开守卫：通过路由规则，离开该组件时被调用</span><br>beforeRouteLeave (to, <span class="hljs-keyword">from</span>, next) &#123;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="13-路由器的两种工作模式"><a href="#13-路由器的两种工作模式" class="headerlink" title="13.路由器的两种工作模式"></a>13.路由器的两种工作模式</h3><ol>
 <li>对于一个url来说，什么是hash值？—— #及其后面的内容就是hash值。</li>
@@ -696,75 +750,372 @@
 </li>
 </ol>
 
-        </div>
-
-        
-            <section class="post-copyright">
                 
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Vity Abour</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://vityabour.github.io/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/">http://vityabour.github.io/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
+              </div>
+            
+            <hr/>
             <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Vue/"># Vue</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/2023/09/11/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/">戚继光故里一游</a>
-            
-            
-            <a class="next" rel="next" href="/2023/09/08/%E7%BB%84%E4%BB%B6/">组件</a>
-            
-        </section>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
 
-    </article>
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Vue/" class="print-no-link">#Vue</a>
+      
+    </div>
+  
 </div>
 
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>笔记</div>
+      <div>http://vityabour.github.io/2023/09/10/创建Vue脚手架/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Vity Abour</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/11/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/" title="戚继光故里一游">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">戚继光故里一游</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/08/%E7%BB%84%E4%BB%B6/" title="组件">
+                        <span class="hidden-mobile">组件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
-            <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Vity Abour | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
-</footer>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
-
 </html>
