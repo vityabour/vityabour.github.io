@@ -6,6 +6,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "站酷文艺体";
+  src: url("../fonts/站酷文艺体.ttf") format("truetype");
+  font-weight: 27px;
+  letter-spacing: 2px;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "胡晓波男神体";
+  src: url("../fonts/胡晓波男神体.otf") format("opentype");
+}
+
 body {
-  font-family: "SmileySans";
+  /* font-family: "站酷文艺体"; */
+  font-family: "胡晓波男神体";
 }
