@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>生命周期</title>
+    <link href="/2023/10/12/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <url>/2023/10/12/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/images/lifecycle.png" alt="生命周期"></p><blockquote><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h5 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h5><ol><li>又名：生命周期回调函数、生命周期函数、生命周期钩子。</li><li>是什么：Vue 在关键时刻帮我们调用的一些特殊名称的函数。</li><li>生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。</li><li>生命周期函数中的 this 指向是 vm 或 组件实例对象。</li></ol><h5 id="常用的生命周期钩子："><a href="#常用的生命周期钩子：" class="headerlink" title="常用的生命周期钩子："></a>常用的生命周期钩子：</h5><ol><li>mounted: 发送 ajax 请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。</li><li>beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</li></ol><h5 id="关于销毁-Vue-实例"><a href="#关于销毁-Vue-实例" class="headerlink" title="关于销毁 Vue 实例"></a>关于销毁 Vue 实例</h5><ol><li>销毁后借助 Vue 开发者工具看不到任何信息。</li><li>销毁后自定义事件会失效，但原生 DOM 事件依然有效。</li><li>一般不会在 beforeDestroy 操作数据，因为即便操作数据，也不会再触发更新流程了。</li></ol></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>告别肚腩，打卡第一天</title>
     <link href="/2023/10/12/%E7%91%9C%E4%BC%BD%E5%9E%AB/"/>
     <url>/2023/10/12/%E7%91%9C%E4%BC%BD%E5%9E%AB/</url>
@@ -29,11 +54,36 @@
   
   
   <entry>
+    <title>戚继光故里一游</title>
+    <link href="/2023/10/12/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/"/>
+    <url>/2023/10/12/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/</url>
+    
+    <content type="html"><![CDATA[<p>今天正好周末，在宿舍闲着无聊就寻思着到学校周边景区逛逛，一番对比后，选择了价格稍低的戚继光故里（学生党没米 ¯(°_o)&#x2F;¯）。于是乎小蓝车走起，一路狂奔目的地……</p><p>以下是随拍，分享给大家！！o(￣ ▽ ￣)ｄ</p><p><img src="/images/qijiguang/qijiguang1.png" alt="qjg1"></p><p><img src="/images/qijiguang/qijiguang2.png" alt="qjg2"></p><p><img src="/images/qijiguang/qijiguang3.png" alt="qjg3"></p><p><img src="/images/qijiguang/qijiguang4.png" alt="qjg4"></p><p><img src="/images/qijiguang/qijiguang5.png" alt="qjg5"></p><p><img src="/images/qijiguang/qijiguang6.png" alt="qjg6"></p><p><img src="/images/qijiguang/qijiguang7.png" alt="qjg7"></p><p><img src="/images/qijiguang/qijiguang8.png" alt="qjg8"></p><p><img src="/images/qijiguang/roommate1.png" alt="qjg1"></p><p><img src="/images/qijiguang/roommate3.png" alt="qjg1"></p><p><img src="/images/qijiguang/roommate4.png" alt="qjg1"></p><p><img src="/images/qijiguang/roommate2.png" alt="qjg1"></p><p>后面这个是跟舍友的合照，哈哈，还不戳吧(☞ ﾟヮﾟ)☞！！！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>生活</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>舍友</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>启航</title>
     <link href="/2023/10/12/%E5%90%AF%E8%88%AA/"/>
     <url>/2023/10/12/%E5%90%AF%E8%88%AA/</url>
     
-    <content type="html"><![CDATA[<p>启航咯！</p><p><img src="/img/qh1.png" alt="pic1"></p><p><img src="/img/qh2.png" alt="pic1"></p>]]></content>
+    <content type="html"><![CDATA[<p>启航咯！o(<em>&#x2F;&#x2F;&#x2F;&#x2F;▽&#x2F;&#x2F;&#x2F;&#x2F;</em>)q</p><p><img src="/images/sailing/sailing_1.jpg" alt="录取通知书1"></p><p><img src="/images/sailing/sailing_2.jpg" alt="录取通知书2"></p>]]></content>
     
     
     <categories>
@@ -104,31 +154,6 @@
   
   
   <entry>
-    <title>戚继光故里一游</title>
-    <link href="/2023/09/11/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/"/>
-    <url>/2023/09/11/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/</url>
-    
-    <content type="html"><![CDATA[<p>今天正好周末，在宿舍闲着无聊就寻思着到学校周边景区逛逛，一番对比后，选择了价格稍低的戚继光故里（学生党没米¯(°_o)&#x2F;¯）。于是乎小蓝车走起，一路狂奔目的地……</p><p>以下是随拍，分享给大家！！o(￣▽￣)ｄ</p><p><img src="/images/qijiguang1.png" alt="qjg1"></p><p><img src="/images/qijiguang2.png" alt="qjg2"></p><p><img src="/images/qijiguang3.png" alt="qjg3"></p><p><img src="/images/qijiguang4.png" alt="qjg4"></p><p><img src="/images/qijiguang5.png" alt="qjg5"></p><p><img src="/images/qijiguang6.png" alt="qjg6"></p><p><img src="/images/qijiguang7.png" alt="qjg7"></p><p><img src="/images/qijiguang8.png" alt="qjg8"></p><p><img src="/images/roommate1.png" alt="qjg1"></p><p><img src="/images/roommate3.png" alt="qjg1"></p><p><img src="/images/roommate4.png" alt="qjg1"></p><p><img src="/images/roommate2.png" alt="qjg1"></p><p>后面这个是跟舍友的合照，哈哈，还不戳吧(☞ﾟヮﾟ)☞！！！</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>生活</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>舍友</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>笔记</title>
     <link href="/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
     <url>/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/</url>
@@ -159,31 +184,6 @@
     <url>/2023/09/08/%E7%BB%84%E4%BB%B6/</url>
     
     <content type="html"><![CDATA[<blockquote><p><strong>组件的定义</strong>：实现应用中<strong>局部</strong>功能代码和<strong>资源</strong>的<strong>集合</strong>。</p></blockquote><p><img src="https://s2.loli.net/2023/09/10/LUJZD6HFb8YX4lQ.png" alt="image-20230910101103526"></p><h3 id="一、创建组件"><a href="#一、创建组件" class="headerlink" title="一、创建组件"></a>一、创建组件</h3><h4 id="（1）非单文件组件"><a href="#（1）非单文件组件" class="headerlink" title="（1）非单文件组件"></a>（1）非单文件组件</h4><p>一个文件中包含有n个组件。</p><h5 id="Vue中使用组件的三大步骤："><a href="#Vue中使用组件的三大步骤：" class="headerlink" title="Vue中使用组件的三大步骤："></a>Vue中使用组件的三大步骤：</h5><p>​（1）定义组件(创建组件)<br>​（2）注册组件<br>​（3）使用组件(写组件标签)</p><ol><li><h5 id="如何定义一个组件？"><a href="#如何定义一个组件？" class="headerlink" title="如何定义一个组件？"></a>如何定义一个组件？</h5><p>使用<code>Vue.extend(options)</code>创建，其中<code>options</code>和<code>new Vue(options)</code>时传入的那个options几乎一样，但也有点区别；</p><ol><li><p><code>el</code>不要写，为什么？最终所有的组件都要经过一个vm的管理，由vm中的el决定服务哪个容器。</p></li><li><p><code>data</code>必须写成函数，为什么？避免组件被复用时，数据存在引用关系。</p><p>备注：使用<code>template</code>可以配置组件结构。</p></li></ol></li><li><h5 id="如何注册组件？"><a href="#如何注册组件？" class="headerlink" title="如何注册组件？"></a>如何注册组件？</h5><ol><li>局部注册：靠<code>new Vue</code>的时候传入<code>components</code>选项</li><li>全局注册：靠<code>Vue.component(&#39;组件名&#39;,组件)</code></li></ol></li><li><h5 id="编写组件标签："><a href="#编写组件标签：" class="headerlink" title="编写组件标签："></a>编写组件标签：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">school</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">school</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ol><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ol><li><p>关于组件名:<br>一个单词组成：<br>    （1）第一种写法(首字母小写)：school<br>    （2）第二种写法(首字母大写)：School<br>    （3）多个单词组成：<br>        第一种写法(kebab-case命名)：my-school<br>        第二种写法(CamelCase命名)：MySchool (需要Vue脚手架支持)<br>        备注：<br>            （1）组件名尽可能回避HTML中已有的元素名称，例如：h2、H2都不行。<br>            （2）可以使用name配置项指定组件在开发者工具中呈现的名字。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">//多个单词组成<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">my-student</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-student</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> student = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(&#123;<br>    <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;studentName&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">        &lt;hr&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;studentAge&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">    `</span>,<br>    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-attr">studentName</span>: <span class="hljs-string">&#x27;张三&#x27;</span>,<br>            <span class="hljs-attr">studentAge</span>: <span class="hljs-string">&#x27;19&#x27;</span><br>        &#125;<br>    &#125;,<br>&#125;)<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>    <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>    <span class="hljs-attr">components</span>: &#123;<br>        <span class="hljs-string">&#x27;my-student&#x27;</span>: student<br>    &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure></li><li><p>关于组件标签:</p><ol><li><p>第一种写法：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">school</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">school</span>&gt;</span><br></code></pre></td></tr></table></figure></li><li><p>第二种写法：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">school</span>/&gt;</span><br></code></pre></td></tr></table></figure></li></ol><p>备注：不用使用脚手架时，<code>&lt;school/&gt;</code>会导致后续组件不能渲染。</p></li><li><p>一个简写方式： </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> school = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(options) <br>可简写为：<span class="hljs-keyword">const</span> school = options<br></code></pre></td></tr></table></figure></li><li><p><code>app</code>组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">app</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">app</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//student组件</span><br><span class="hljs-keyword">const</span> student = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(&#123;<br>    <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;name&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">        &lt;hr&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;age&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">    `</span>,<br>    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;张三&#x27;</span>,<br>            <span class="hljs-attr">age</span>: <span class="hljs-number">19</span><br>        &#125;<br>    &#125;,<br>&#125;)<br><span class="hljs-comment">//school组件</span><br><span class="hljs-keyword">const</span> school = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(&#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;mySchool&#x27;</span>,<br>    <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;schoolName&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">        &lt;hr&gt;</span><br><span class="hljs-string">        &lt;h1&gt;&#123;&#123;schoolAge&#125;&#125;&lt;/h1&gt;</span><br><span class="hljs-string">        &lt;myStudent&gt;&lt;/myStudent&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">    `</span>,<br>    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-attr">schoolName</span>: <span class="hljs-string">&#x27;烟台科技学院&#x27;</span>,<br>            <span class="hljs-attr">schoolAge</span>: <span class="hljs-string">&#x27;2003&#x27;</span><br>        &#125;<br>    &#125;,<br>    <span class="hljs-attr">components</span>: &#123;<br>    <span class="hljs-comment">//将student组件嵌入到school组件</span><br>        <span class="hljs-string">&#x27;myStudent&#x27;</span>: student<br>    &#125;<br>&#125;)<br><span class="hljs-comment">//hello组件</span><br><span class="hljs-keyword">const</span> hello = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(&#123;<br>    <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;h1&gt;你好，欢迎来到&#123;&#123;school&#125;&#125;&lt;/h1&gt;        </span><br><span class="hljs-string">    `</span>,<br>    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-attr">school</span>: <span class="hljs-string">&#x27;烟科&#x27;</span><br>        &#125;<br>    &#125;,<br>&#125;)<br><span class="hljs-comment">//app组件</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">extend</span>(&#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;myApp&#x27;</span>,<br>    <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">        &lt;hello&gt;&lt;/hello&gt;</span><br><span class="hljs-string">        &lt;school&gt;&lt;/school&gt;    </span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">`</span>,<br>    <span class="hljs-attr">components</span>: &#123;<br>    分别将hello组件和school组件嵌入到app组件<br>        hello,<br>        school,<br>    &#125;<br>&#125;)<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>    <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>    <span class="hljs-attr">components</span>: &#123;<br>    <span class="hljs-comment">//vm根结点下只有app组件</span><br>        app,<br>    &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure><blockquote><p>注意：组件中，<code>template</code>属性要求必须有一个根结点。</p></blockquote></li></ol><h5 id="关于VueComponent："><a href="#关于VueComponent：" class="headerlink" title="关于VueComponent："></a>关于VueComponent：</h5><ol><li><p>school组件本质是一个名为VueComponent的构造函数，且不是程序员定义的，是Vue.extend生成的。</p></li><li><p>我们只需要写<code>&lt;school/&gt;</code>或<code>&lt;school&gt;&lt;/school&gt;</code>，Vue解析时会帮我们创建school组件的实例对象，即Vue帮我们执行的：new VueComponent(options)。</p></li><li><p>特别注意：每次调用Vue.extend，返回的都是一个全新的VueComponent！！！！</p></li><li><p>关于this指向：</p><ol><li><p>组件配置中：</p><p>data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【VueComponent实例对象】。</p></li><li><p>new Vue(options)配置中：</p></li></ol><p>data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【Vue实例对象】。</p></li><li><p>VueComponent的实例对象，以后简称vc（也可称之为：组件实例对象）。Vue的实例对象，以后简称vm。</p></li></ol><h5 id="一个重要的内置关系："><a href="#一个重要的内置关系：" class="headerlink" title="一个重要的内置关系："></a>一个重要的内置关系：</h5><ol><li>一个重要的内置关系：VueComponent.prototype.<strong>proto</strong> &#x3D;&#x3D;&#x3D; Vue.prototype</li><li>为什么要有这个关系：让组件实例对象（vc）可以访问到 Vue原型上的属性、方法。</li></ol><p><img src="https://s2.loli.net/2023/09/09/UDubTKXeAonflOG.png" alt="image-20230909233040725.png"></p><h4 id="（2）单文件组件"><a href="#（2）单文件组件" class="headerlink" title="（2）单文件组件"></a>（2）单文件组件</h4><p>一个文件只包含一个组件。</p><h5 id="1-文件名写法："><a href="#1-文件名写法：" class="headerlink" title="1.文件名写法："></a>1.文件名写法：</h5><ol><li>单个单词文件名写法：<code>school.vue</code>、<code>School.vue</code>（推荐）。</li><li>多个单词文件名写法：<code>my-school.vue</code>、<code>MySchool.vue</code>（推荐）。</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>...<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>name:&#x27;...&#x27;,<br>    data()&#123;<br>        return&#123;<br>            ...<br>        &#125;<br>    &#125;,<br>    components:&#123;<br>        ...<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style&gt;<br>...<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>编程</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>生命周期</title>
-    <link href="/2023/09/07/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <url>/2023/09/07/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
-    
-    <content type="html"><![CDATA[<p><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="生命周期"></p><blockquote><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h5 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h5><ol><li>又名：生命周期回调函数、生命周期函数、生命周期钩子。</li><li>是什么：Vue在关键时刻帮我们调用的一些特殊名称的函数。</li><li>生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。</li><li>生命周期函数中的this指向是vm 或 组件实例对象。</li></ol><h5 id="常用的生命周期钩子："><a href="#常用的生命周期钩子：" class="headerlink" title="常用的生命周期钩子："></a>常用的生命周期钩子：</h5><ol><li>mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。</li><li>beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</li></ol><h5 id="关于销毁Vue实例"><a href="#关于销毁Vue实例" class="headerlink" title="关于销毁Vue实例"></a>关于销毁Vue实例</h5><ol><li>销毁后借助Vue开发者工具看不到任何信息。</li><li>销毁后自定义事件会失效，但原生DOM事件依然有效。</li><li>一般不会在beforeDestroy操作数据，因为即便操作数据，也不会再触发更新流程了。</li></ol></blockquote>]]></content>
     
     
     <categories>
@@ -304,16 +304,16 @@
   
   
   <entry>
-    <title></title>
+    <title>国庆那些事儿</title>
     <link href="/2023/09/03/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/"/>
     <url>/2023/09/03/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/</url>
     
-    <content type="html"><![CDATA[<p>哈喽，家人们，好久不见！最近发生了很多事，因为某种原因一直没更新ㄟ( ▔, ▔ )ㄏ，还请见谅啦！</p><center>无脑危机</center><p>简直crazy，小破站差点就没了。起因是前段时间C盘爆满，总想着删点东西，结果一个不小心把系统文件给删了＞︿＜，于是电脑处于无限重启状态，还把密码给忘了，当时快要疯啦，要知道没有康姆皮特我就是个废物……（哈哈，也没有啦，这几天还在干其他的事，后面会提到）。</p><center>国庆兼职</center><p>结果正好碰到国庆假期，连放八天假，阴差阳错跟舍友去了一家吕氏疙瘩汤做兼职，这一干就是八天，我滴假期是一天都没落下(≧ ﹏ ≦)，电脑也没修成，在宿舍疯狂吃灰……<br>当然，兼职的这几天也遇见很多不同的人，有为自己热爱的事辍学出来</p>]]></content>
+    <content type="html"><![CDATA[<p>哈喽，家人们，好久不见！最近发生了很多事，因为某种原因一直没更新ㄟ( ▔, ▔ )ㄏ，还请见谅啦！</p><center><h4>皮特危机</h4></center><p>简直 crazy，小破站差点就没了。起因是前段时间 C 盘爆满，总想着删点东西，结果一个不小心把系统文件给删了＞︿＜，于是电脑处于无限重启状态，还把密码给忘了，当时快要疯啦，要知道没有康姆皮特我就是个废物……（哈哈，也没有啦，这几天还在干其他的事，后面会提到）。</p><center><h4>国庆打工</h4></center><p>结果正好碰到国庆假期，连放八天假，阴差阳错跟舍友去了一家吕氏疙瘩汤做兼职，这一干就是八天，我滴假期是一天都没落下(≧ ﹏ ≦)，电脑也没修成，在宿舍疯狂吃灰……</p><p>说起干活，那叫一个终身难忘啊，刚到第一天就被安排刷盘子，这一干就是八天。洗碗间及其狭小，光是呆在里面就憋得慌，致郁性极强。说起刷盘子，那叫一个无穷无尽，一筐一筐的堆在门口，像山丘，像火车，一眼望不到头。我们一共五个人，两个大叔，一个老哥，还有我跟舍友，说到两个大叔，一个面相和蔼，五十有七，姓刘，我们都叫他老刘，一个略显滑稽，比老刘小一岁，我就干脆叫他郑叔。<br>虽然人不可貌相，但他们的性格和行为真的都体现在他们的样貌上。老刘性格和蔼可亲，踏实能干，是我们当中的主力干，属于是老当益壮了；相比之下，小一岁的郑叔就显得好吃懒做。记得有一次，老刘连刷了好几个钟头，郑叔却若无其事的在旁边摆盘子，</p><p>当然，兼职的这几天也遇见很多不同的人，有为自己热爱的事辍学出来打工的奋斗青年，有退休还在为儿子大事奋斗的大叔，当然还有初入职场活泼爱动的小妹……</p>]]></content>
     
     
     <categories>
       
-      <category>编程</category>
+      <category>唠嗑</category>
       
     </categories>
     
@@ -358,7 +358,7 @@
     <link href="/2023/09/02/%E8%80%B3%E6%9C%BA/"/>
     <url>/2023/09/02/%E8%80%B3%E6%9C%BA/</url>
     
-    <content type="html"><![CDATA[<p>因为之前的蓝牙耳机丢了一个，于是乎在淘宝上疯狂对比各种蓝牙耳机，再加上B站各种蓝牙耳机测评视频的推荐下，终于在选出了两款个人感觉性价比不错的蓝牙耳机，分别是<code>倍思m2s</code>和<code>绿联T3</code>。</p><p>当然，这对于一个具有极度选择恐惧症的我来说，在众多耳机中选出一款中意的耳机仅次于向对象表白了。哈哈(¬‿¬)，最后在我残存的理智下，我还是选择了<code>绿联T3</code>蓝牙耳机。原因很简单，没米＞︿＜。虽然两款耳机音质方面并没有太大的差异，但是<code>倍思m2s</code>有特定的APP支持在手机上调节，相比之下，绿联T3就没有什么优势了。外观方面，两者都是以简洁大气的白色作为主色调，没有太大的差别。最后，也就是最关心的马内啦，目前市场价格中<code>倍思m2s</code>比<code>绿联T3</code>足足贵了将近一百块左右，我TM！！！</p><p><img src="https://s2.loli.net/2023/09/02/hTZt3PcpbGIQ6S7.jpg" alt="煤球_1"></p><p><img src="https://s2.loli.net/2023/09/02/3ZJUnGNfieXL8uE.jpg" alt="煤球2"></p><p><img src="https://s2.loli.net/2023/09/02/ifd2sDWucYZ5nrj.jpg" alt="煤球3"></p>]]></content>
+    <content type="html"><![CDATA[<p>因为之前的蓝牙耳机丢了一个，于是乎在淘宝上疯狂对比各种蓝牙耳机，再加上 B 站各种蓝牙耳机测评视频的推荐下，终于在选出了两款个人感觉性价比不错的蓝牙耳机，分别是<code>倍思m2s</code>和<code>绿联T3</code>。</p><p>当然，这对于一个具有极度选择恐惧症的我来说，在众多耳机中选出一款中意的耳机仅次于向对象表白了。哈哈(¬‿¬)，最后在我残存的理智下，我还是选择了<code>绿联T3</code>蓝牙耳机。原因很简单，没米＞︿＜。虽然两款耳机音质方面并没有太大的差异，但是<code>倍思m2s</code>有特定的 APP 支持在手机上调节，相比之下，绿联 T3 就没有什么优势了。外观方面，两者都是以简洁大气的白色作为主色调，没有太大的差别。最后，也就是最关心的马内啦，目前市场价格中<code>倍思m2s</code>比<code>绿联T3</code>足足贵了将近一百块左右，我 TM！！！</p><p><img src="/images/eggette/eggette_1.jpg" alt="煤球_1"><br><img src="/images/eggette/eggette_2.jpg" alt="煤球_2"><br><img src="/images/eggette/eggette_3.jpg" alt="煤球_3"><br><img src="/images/eggette/eggette_4.jpg" alt="煤球_4"></p>]]></content>
     
     
     <categories>
