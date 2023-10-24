@@ -12,13 +12,13 @@ const ap = new APlayer({
     {
         name: "想い出は远くの日々",
         artist: "天門",
-        url: 'http://m7.music.126.net/20231023102751/243087fac981d5efc777c2e494ec0ff5/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3883640023/ee66/f570/3745/cbbd690720800af3e6895344c374811d.mp3',
+        url: 'https://m10.music.126.net/20231024091921/c0536b580e4640851b595ae042c98147/yyaac/obj/wonDkMOGw6XDiTHCmMOi/3883640466/858b/a918/1895/eb1b5e2e15c99f9f171b0dc2f8bd7c04.m4a',
         cover: 'https://p2.music.126.net/O9vr2_lr6vRbQ68VWJF44w==/109951164950199108.jpg'
     },
     {
         name: '空と海と詩',
         artist: '天門',
-        url: 'http://m801.music.126.net/20231023103726/a948c2436251708015dbfa362de3890d/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/24473898507/7fdf/f50f/a48a/c9efb0c5469873e97669935f2cbf97b7.mp3',
+        url: '/public/musc/mp3/天門-想い出は远くの日々.mp3',
         cover: 'https://p1.music.126.net/8YoHguW4VM84BbjHUgpipw==/109951168282411219.jpg',
     }, 
     {
