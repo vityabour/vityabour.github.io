@@ -66,7 +66,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"vityabour.github.io","root":"/","version":"1.9.5-a","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#9FC131","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"vityabour.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#9FC131","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -110,7 +110,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont bi bi-house"></i>
                 <span>首页</span>
               </a>
@@ -122,7 +122,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont bi bi-grid"></i>
                 <span>归档</span>
               </a>
@@ -134,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont bi bi-layers"></i>
                 <span>分类</span>
               </a>
@@ -146,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="bi bi-bookmark"></i>
                 <span>标签</span>
               </a>
@@ -158,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont bi bi-person-circle"></i>
                 <span>关于</span>
               </a>
@@ -240,7 +240,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/10/23/%E5%85%A8%E5%B1%80%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BA%BF/" target="_self">
         <div>
-          
+          一种组件间通讯的方式，适用于任意组件间通信  1、安装全局事件总线 1234567new Vue(&#123;  ......  beforeCreate() &#123;    Vue.prototype.$bus = this; //安装全局事件总线，$bus就是当前应用的vm  &#125;,  ......&#125;)   使用事件总线： （1）接收数据：A组件想要接收数据，则在A组
         </div>
       </a>
 
@@ -250,6 +250,67 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-10-23 13:46" pubdate>
               2023-10-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/10/12/%E7%BB%84%E4%BB%B6/" target="_self">
+          组件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/10/12/%E7%BB%84%E4%BB%B6/" target="_self">
+        <div>
+          组件的定义：实现应用中局部功能代码和资源的集合。   一、创建组件（1）非单文件组件一个文件中包含有n个组件。 Vue中使用组件的三大步骤：​	（1）定义组件(创建组件)​		（2）注册组件​		（3）使用组件(写组件标签)  如何定义一个组件？使用Vue.extend(options)创建，其中options和new Vue(options)时传入的那个options几乎一样，但也有点区别；
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-10-12 18:11" pubdate>
+              2023-10-12
             </time>
           </div>
         
@@ -418,6 +479,67 @@
   <div class="row mx-auto index-card">
     
     
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/10/12/%E6%8C%87%E4%BB%A4/" target="_self">
+          指令
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/10/12/%E6%8C%87%E4%BB%A4/" target="_self">
+        <div>
+          一、内置指令v-bind: 单向绑定解析表达式, 可简写为 :xxx    v-model: 双向数据绑定    v-for: 遍历数组&#x2F;对象&#x2F;字符串    v-on: 绑定事件监听, 可简写为@    v-if: 条件渲染（动态控制节点是否存存在）    v-else: 条件渲染（动态控制节点是否存存在）    v-show: 条件渲染 (动态控制节点是否展示)    v-t
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-10-12 18:11" pubdate>
+              2023-10-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2023/10/12/%E6%88%9A%E7%BB%A7%E5%85%89%E6%95%85%E9%87%8C%E4%B8%80%E6%B8%B8/" target="_self">
           <img src="/images/qijiguang/qijiguang1.png" srcset="/img/loading.gif" lazyload alt="戚继光故里一游">
@@ -488,6 +610,67 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/2023/10/12/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/" target="_self">
+          笔记
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/10/12/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/" target="_self">
+        <div>
+          脚手架文件结构├── node_modules  ├── public │   ├── favicon.ico: 页签图标 │   └── index.html: 主页面 ├── src │   ├── assets: 存放静态资源 │   │   └── logo.png │   │── component: 存放组件 │   │   └── HelloWorld.vue │   │── App
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-10-12 18:11" pubdate>
+              2023-10-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/2023/09/11/%E5%85%B3%E9%97%ADVue%E6%8F%90%E7%A4%BA/" target="_self">
           关闭Vue提示
         </a>
@@ -506,189 +689,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-09-11 10:20" pubdate>
               2023-09-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/" target="_self">
-          笔记
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/09/10/%E5%88%9B%E5%BB%BAVue%E8%84%9A%E6%89%8B%E6%9E%B6/" target="_self">
-        <div>
-          脚手架文件结构├── node_modules  ├── public │   ├── favicon.ico: 页签图标 │   └── index.html: 主页面 ├── src │   ├── assets: 存放静态资源 │   │   └── logo.png │   │── component: 存放组件 │   │   └── HelloWorld.vue │   │── App
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-09-10 10:13" pubdate>
-              2023-09-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/09/08/%E7%BB%84%E4%BB%B6/" target="_self">
-          组件
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/09/08/%E7%BB%84%E4%BB%B6/" target="_self">
-        <div>
-          组件的定义：实现应用中局部功能代码和资源的集合。   一、创建组件（1）非单文件组件一个文件中包含有n个组件。 Vue中使用组件的三大步骤：​	（1）定义组件(创建组件)​		（2）注册组件​		（3）使用组件(写组件标签)  如何定义一个组件？使用Vue.extend(options)创建，其中options和new Vue(options)时传入的那个options几乎一样，但也有点区别；
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-09-08 00:09" pubdate>
-              2023-09-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/09/06/%E6%8C%87%E4%BB%A4/" target="_self">
-          指令
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/09/06/%E6%8C%87%E4%BB%A4/" target="_self">
-        <div>
-          一、内置指令v-bind: 单向绑定解析表达式, 可简写为 :xxx    v-model: 双向数据绑定    v-for: 遍历数组&#x2F;对象&#x2F;字符串    v-on: 绑定事件监听, 可简写为@    v-if: 条件渲染（动态控制节点是否存存在）    v-else: 条件渲染（动态控制节点是否存存在）    v-show: 条件渲染 (动态控制节点是否展示)    v-t
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-09-06 00:03" pubdate>
-              2023-09-06
             </time>
           </div>
         
